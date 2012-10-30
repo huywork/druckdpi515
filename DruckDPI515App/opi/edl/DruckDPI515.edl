@@ -1,0 +1,127 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 368
+y 63
+w 441
+h 531
+font "arial-medium-r-14.0"
+ctlFont "arial-bold-r-14.0"
+btnFont "arial-bold-r-14.0"
+fgColor index 14
+bgColor index 3
+textColor index 14
+ctlFgColor1 index 25
+ctlFgColor2 index 0
+ctlBgColor1 index 3
+ctlBgColor2 index 14
+topShadowColor index 1
+botShadowColor index 11
+title "Device - det"
+showGrid
+snapToGrid
+endScreenProperties
+
+# (Choice Button)
+object activeChoiceButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 0
+y 0
+w 390
+h 30
+fgColor index 14
+bgColor index 3
+selectColor index 4
+inconsistentColor index 0
+topShadowColor index 1
+botShadowColor index 11
+controlPv "LOC\\$(!W)tab=e:0,Instr,Outp,Cal,Sense,Source,Stat,Unit"
+font "arial-bold-r-12.0"
+orientation "horizontal"
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 0
+y 30
+w 392
+h 446
+lineColor index 1
+fillColor index 0
+numPoints 3
+xPoints {
+  0 0
+  1 392
+  2 392
+}
+yPoints {
+  0 476
+  1 476
+  2 30
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 0
+y 30
+w 392
+h 446
+lineColor index 11
+fillColor index 0
+numPoints 3
+xPoints {
+  0 0
+  1 0
+  2 392
+}
+yPoints {
+  0 476
+  1 30
+  2 30
+}
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 2
+y 32
+w 388
+h 442
+fgColor index 14
+bgColor index 3
+topShadowColor index 0
+botShadowColor index 0
+displaySource "menu"
+filePv "LOC\\$(!W)tab"
+sizeOfs 5
+numDsps 7
+displayFileName {
+  0 "DruckDPI515_instr.edl"
+  1 "DruckDPI515_outp.edl"
+  2 "DruckDPI515_cal.edl"
+  3 "DruckDPI515_sense.edl"
+  4 "DruckDPI515_source.edl"
+  5 "DruckDPI515_stat.edl"
+  6 "DruckDPI515_unit.edl"
+}
+noScroll
+endObjectProperties
+

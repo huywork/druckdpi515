@@ -1,0 +1,677 @@
+# DruckDPI515.template
+
+
+# Parameters:
+# % macro,  P,       EPICS name prefix
+# % macro,  PORT,    Asyn port
+
+#*!*Section template begin*!*
+record(longout, "$(P):PERFORMZERO")
+{
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT),0,5)PERFORMZERO")
+}
+record(longout, "$(P):ABORTZERO")
+{
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT),0,5)ABORTZERO")
+}
+record(mbbi, "$(P):AUTOZEROSTATE_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),0,5)AUTOZEROSTATE")
+  field(ZRVL, "0")
+  field(ZRST, "ok")
+  field(ONVL, "1")
+  field(ONST, "in progress")
+  field(TWVL, "2")
+  field(TWST, "timed out")
+  field(THVL, "3")
+  field(THST, "offset o/s lims")
+  field(FRVL, "4")
+  field(FRST, "aborted")
+}
+record(ai, "$(P):AUTOZEROVAL_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynFloat64")
+  field(INP,  "@asyn($(PORT),0,5)AUTOZEROVAL")
+}
+record(ao, "$(P):AUTOZEROVAL")
+{
+  field(DTYP, "asynFloat64")
+  field(OUT,  "@asyn($(PORT),0,5)AUTOZEROVAL")
+}
+record(longin, "$(P):TIMEDZERO_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),0,5)TIMEDZERO")
+}
+record(mbbi, "$(P):TIMEDZEROSTATE_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),0,5)TIMEDZEROSTATE")
+  field(ZRVL, "0")
+  field(ZRST, "off")
+  field(ONVL, "1")
+  field(ONST, "on")
+}
+record(mbbo, "$(P):TIMEDZEROSTATE")
+{
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT),0,5)TIMEDZEROSTATE")
+  field(ZRVL, "0")
+  field(ZRST, "off")
+  field(ONVL, "1")
+  field(ONST, "on")
+}
+record(mbbi, "$(P):DIGITALIN_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),0,5)DIGITALIN")
+  field(ZRVL, "0")
+  field(ZRST, "off")
+  field(ONVL, "1")
+  field(ONST, "on")
+}
+record(waveform, "$(P):INSTRCATALOGUE_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynOctetRead")
+  field(INP,  "@asyn($(PORT),0,5)INSTRCATALOGUE")
+  field(FTVL, "CHAR")
+  field(NELM, "256")
+}
+record(stringin, "$(P):RANGENAME_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynOctetRead")
+  field(INP,  "@asyn($(PORT),0,5)RANGENAME")
+}
+record(ai, "$(P):MAXRANGE_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynFloat64")
+  field(INP,  "@asyn($(PORT),0,5)MAXRANGE")
+}
+record(ai, "$(P):MINRANGE_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynFloat64")
+  field(INP,  "@asyn($(PORT),0,5)MINRANGE")
+}
+record(longin, "$(P):INSTRNUMBER_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),0,5)INSTRNUMBER")
+}
+record(stringin, "$(P):UNITS_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynOctetRead")
+  field(INP,  "@asyn($(PORT),0,5)UNITS")
+}
+record(longin, "$(P):INSTRVERSION_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),0,5)INSTRVERSION")
+}
+record(mbbi, "$(P):ISOLATIONVALVE_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),0,5)ISOLATIONVALVE")
+  field(ZRVL, "0")
+  field(ZRST, "off")
+  field(ONVL, "1")
+  field(ONST, "on")
+}
+record(mbbo, "$(P):ISOLATIONVALVE")
+{
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT),0,5)ISOLATIONVALVE")
+  field(ZRVL, "0")
+  field(ZRST, "off")
+  field(ONVL, "1")
+  field(ONST, "on")
+}
+record(mbbi, "$(P):DIGITALOUT1_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),0,5)DIGITALOUT1")
+  field(ZRVL, "0")
+  field(ZRST, "low")
+  field(ONVL, "1")
+  field(ONST, "high")
+}
+record(mbbo, "$(P):DIGITALOUT1")
+{
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT),0,5)DIGITALOUT1")
+  field(ZRVL, "0")
+  field(ZRST, "low")
+  field(ONVL, "1")
+  field(ONST, "high")
+}
+record(mbbi, "$(P):DIGITALOUT2_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),0,5)DIGITALOUT2")
+  field(ZRVL, "0")
+  field(ZRST, "low")
+  field(ONVL, "1")
+  field(ONST, "high")
+}
+record(mbbo, "$(P):DIGITALOUT2")
+{
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT),0,5)DIGITALOUT2")
+  field(ZRVL, "0")
+  field(ZRST, "low")
+  field(ONVL, "1")
+  field(ONST, "high")
+}
+record(mbbi, "$(P):OUTPUTSTATE_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),0,5)OUTPUTSTATE")
+  field(ZRVL, "0")
+  field(ZRST, "off")
+  field(ONVL, "1")
+  field(ONST, "on")
+}
+record(mbbo, "$(P):OUTPUTSTATE")
+{
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT),0,5)OUTPUTSTATE")
+  field(ZRVL, "0")
+  field(ZRST, "off")
+  field(ONVL, "1")
+  field(ONST, "on")
+}
+record(ai, "$(P):PRESSURE_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynFloat64")
+  field(INP,  "@asyn($(PORT),0,5)PRESSURE")
+}
+record(ai, "$(P):BAROMETRIC_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynFloat64")
+  field(INP,  "@asyn($(PORT),0,5)BAROMETRIC")
+}
+record(mbbi, "$(P):GASUSED_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),0,5)GASUSED")
+  field(ZRVL, "0")
+  field(ZRST, "air")
+  field(ONVL, "1")
+  field(ONST, "nitr")
+}
+record(mbbo, "$(P):GASUSED")
+{
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT),0,5)GASUSED")
+  field(ZRVL, "0")
+  field(ZRST, "air")
+  field(ONVL, "1")
+  field(ONST, "nitr")
+}
+record(ai, "$(P):HEIGHT_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynFloat64")
+  field(INP,  "@asyn($(PORT),0,5)HEIGHT")
+}
+record(ao, "$(P):HEIGHT")
+{
+  field(DTYP, "asynFloat64")
+  field(OUT,  "@asyn($(PORT),0,5)HEIGHT")
+}
+record(mbbi, "$(P):HEADCORRSTATE_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),0,5)HEADCORRSTATE")
+  field(ZRVL, "0")
+  field(ZRST, "off")
+  field(ONVL, "1")
+  field(ONST, "on")
+}
+record(mbbo, "$(P):HEADCORRSTATE")
+{
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT),0,5)HEADCORRSTATE")
+  field(ZRVL, "0")
+  field(ZRST, "off")
+  field(ONVL, "1")
+  field(ONST, "on")
+}
+record(ai, "$(P):FILTERFREQUENCY_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynFloat64")
+  field(INP,  "@asyn($(PORT),0,5)FILTERFREQUENCY")
+}
+record(ao, "$(P):FILTERFREQUENCY")
+{
+  field(DTYP, "asynFloat64")
+  field(OUT,  "@asyn($(PORT),0,5)FILTERFREQUENCY")
+}
+record(mbbi, "$(P):FILTERSTATE_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),0,5)FILTERSTATE")
+  field(ZRVL, "0")
+  field(ZRST, "off")
+  field(ONVL, "1")
+  field(ONST, "on")
+}
+record(mbbo, "$(P):FILTERSTATE")
+{
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT),0,5)FILTERSTATE")
+  field(ZRVL, "0")
+  field(ZRST, "off")
+  field(ONVL, "1")
+  field(ONST, "on")
+}
+record(longin, "$(P):FILLTIME_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),0,5)FILLTIME")
+}
+record(longout, "$(P):FILLTIME")
+{
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT),0,5)FILLTIME")
+}
+record(mbbi, "$(P):FILLTIMESTATE_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),0,5)FILLTIMESTATE")
+  field(ZRVL, "0")
+  field(ZRST, "off")
+  field(ONVL, "1")
+  field(ONST, "on")
+}
+record(mbbo, "$(P):FILLTIMESTATE")
+{
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT),0,5)FILLTIMESTATE")
+  field(ZRVL, "0")
+  field(ZRST, "off")
+  field(ONVL, "1")
+  field(ONST, "on")
+}
+record(stringin, "$(P):SENSERANGE_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynOctetRead")
+  field(INP,  "@asyn($(PORT),0,5)SENSERANGE")
+}
+record(stringout, "$(P):SENSERANGE")
+{
+  field(DTYP, "asynOctetWrite")
+  field(OUT,  "@asyn($(PORT),0,5)SENSERANGE")
+}
+record(longin, "$(P):SETPOINTEFFORT_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),0,5)SETPOINTEFFORT")
+}
+record(ai, "$(P):INLIMITS_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynFloat64")
+  field(INP,  "@asyn($(PORT),0,5)INLIMITS")
+}
+record(ao, "$(P):INLIMITS")
+{
+  field(DTYP, "asynFloat64")
+  field(OUT,  "@asyn($(PORT),0,5)INLIMITS")
+}
+record(ai, "$(P):INLIMITSTIME_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynFloat64")
+  field(INP,  "@asyn($(PORT),0,5)INLIMITSTIME")
+}
+record(ao, "$(P):INLIMITSTIME")
+{
+  field(DTYP, "asynFloat64")
+  field(OUT,  "@asyn($(PORT),0,5)INLIMITSTIME")
+}
+record(ai, "$(P):PRESSURESETPOINT_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynFloat64")
+  field(INP,  "@asyn($(PORT),0,5)PRESSURESETPOINT")
+}
+record(ao, "$(P):PRESSURESETPOINT")
+{
+  field(DTYP, "asynFloat64")
+  field(OUT,  "@asyn($(PORT),0,5)PRESSURESETPOINT")
+}
+record(longout, "$(P):PERFORMVENT")
+{
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT),0,5)PERFORMVENT")
+}
+record(longout, "$(P):ABORTVENT")
+{
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT),0,5)ABORTVENT")
+}
+record(mbbi, "$(P):VENTSTATE_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),0,5)VENTSTATE")
+  field(ZRVL, "0")
+  field(ZRST, "ok")
+  field(ONVL, "1")
+  field(ONST, "in progress")
+  field(TWVL, "2")
+  field(TWST, "timed out")
+  field(THVL, "3")
+  field(THST, "o/s lims")
+  field(FRVL, "4")
+  field(FRST, "aborted")
+}
+record(longin, "$(P):VENTTIME_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),0,5)VENTTIME")
+}
+record(longout, "$(P):VENTTIME")
+{
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT),0,5)VENTTIME")
+}
+record(stringin, "$(P):SOURCERANGE_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynOctetRead")
+  field(INP,  "@asyn($(PORT),0,5)SOURCERANGE")
+}
+record(stringout, "$(P):SOURCERANGE")
+{
+  field(DTYP, "asynOctetWrite")
+  field(OUT,  "@asyn($(PORT),0,5)SOURCERANGE")
+}
+record(mbbi, "$(P):AUTOSOURCERANGE_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),0,5)AUTOSOURCERANGE")
+  field(ZRVL, "0")
+  field(ZRST, "off")
+  field(ONVL, "1")
+  field(ONST, "on")
+}
+record(mbbo, "$(P):AUTOSOURCERANGE")
+{
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT),0,5)AUTOSOURCERANGE")
+  field(ZRVL, "0")
+  field(ZRST, "off")
+  field(ONVL, "1")
+  field(ONST, "on")
+}
+record(stringin, "$(P):SOURCERANGELOW_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynOctetRead")
+  field(INP,  "@asyn($(PORT),0,5)SOURCERANGELOW")
+}
+record(ai, "$(P):PRESSURESLEWRATE_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynFloat64")
+  field(INP,  "@asyn($(PORT),0,5)PRESSURESLEWRATE")
+}
+record(ao, "$(P):PRESSURESLEWRATE")
+{
+  field(DTYP, "asynFloat64")
+  field(OUT,  "@asyn($(PORT),0,5)PRESSURESLEWRATE")
+}
+record(mbbi, "$(P):PRESSURESLEWMODE_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),0,5)PRESSURESLEWMODE")
+  field(ZRVL, "0")
+  field(ZRST, "max")
+  field(ONVL, "1")
+  field(ONST, "val")
+}
+record(mbbo, "$(P):PRESSURESLEWMODE")
+{
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT),0,5)PRESSURESLEWMODE")
+  field(ZRVL, "0")
+  field(ZRST, "max")
+  field(ONVL, "1")
+  field(ONST, "val")
+}
+record(mbbi, "$(P):PRESSUREOVERSHOOT_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),0,5)PRESSUREOVERSHOOT")
+  field(ZRVL, "0")
+  field(ZRST, "not allowed")
+  field(ONVL, "1")
+  field(ONST, "allowed")
+}
+record(mbbo, "$(P):PRESSUREOVERSHOOT")
+{
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT),0,5)PRESSUREOVERSHOOT")
+  field(ZRVL, "0")
+  field(ZRST, "not allowed")
+  field(ONVL, "1")
+  field(ONST, "allowed")
+}
+record(longin, "$(P):CONDITIONREGISTER_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),0,5)CONDITIONREGISTER")
+}
+record(longin, "$(P):ENABLEREGISTER_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),0,5)ENABLEREGISTER")
+}
+record(longout, "$(P):ENABLEREGISTER")
+{
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT),0,5)ENABLEREGISTER")
+}
+record(longin, "$(P):EVENTREGISTER_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),0,5)EVENTREGISTER")
+}
+record(longin, "$(P):PRESSURECONDITIONREGISTER_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),0,5)PRESSURECONDITIONREGISTER")
+}
+record(longin, "$(P):PRESSUREENABLEREGISTER_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),0,5)PRESSUREENABLEREGISTER")
+}
+record(longout, "$(P):PRESSUREENABLEREGISTER")
+{
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT),0,5)PRESSUREENABLEREGISTER")
+}
+record(longin, "$(P):PRESSUREEVENTREGISTER_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),0,5)PRESSUREEVENTREGISTER")
+}
+record(longin, "$(P):SYSTEMERRORNUMBER_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),0,5)SYSTEMERRORNUMBER")
+}
+record(stringin, "$(P):SYSTEMERROR_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynOctetRead")
+  field(INP,  "@asyn($(PORT),0,5)SYSTEMERROR")
+}
+record(stringin, "$(P):SYSTEMSCPIVERS_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynOctetRead")
+  field(INP,  "@asyn($(PORT),0,5)SYSTEMSCPIVERS")
+}
+record(stringin, "$(P):PRESSUREUNITS_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynOctetRead")
+  field(INP,  "@asyn($(PORT),0,5)PRESSUREUNITS")
+}
+record(stringout, "$(P):PRESSUREUNITS")
+{
+  field(DTYP, "asynOctetWrite")
+  field(OUT,  "@asyn($(PORT),0,5)PRESSUREUNITS")
+}
+record(stringin, "$(P):USERUNIT1NAME_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynOctetRead")
+  field(INP,  "@asyn($(PORT),0,5)USERUNIT1NAME")
+}
+record(stringout, "$(P):USERUNIT1NAME")
+{
+  field(DTYP, "asynOctetWrite")
+  field(OUT,  "@asyn($(PORT),0,5)USERUNIT1NAME")
+}
+record(ai, "$(P):USERUNIT1FACTOR_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynFloat64")
+  field(INP,  "@asyn($(PORT),0,5)USERUNIT1FACTOR")
+}
+record(ao, "$(P):USERUNIT1FACTOR")
+{
+  field(DTYP, "asynFloat64")
+  field(OUT,  "@asyn($(PORT),0,5)USERUNIT1FACTOR")
+}
+record(stringin, "$(P):USERUNIT2NAME_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynOctetRead")
+  field(INP,  "@asyn($(PORT),0,5)USERUNIT2NAME")
+}
+record(stringout, "$(P):USERUNIT2NAME")
+{
+  field(DTYP, "asynOctetWrite")
+  field(OUT,  "@asyn($(PORT),0,5)USERUNIT2NAME")
+}
+record(ai, "$(P):USERUNIT2FACTOR_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynFloat64")
+  field(INP,  "@asyn($(PORT),0,5)USERUNIT2FACTOR")
+}
+record(ao, "$(P):USERUNIT2FACTOR")
+{
+  field(DTYP, "asynFloat64")
+  field(OUT,  "@asyn($(PORT),0,5)USERUNIT2FACTOR")
+}
+record(longout, "$(P):CLEARSTATUS")
+{
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT),0,5)CLEARSTATUS")
+}
+record(longin, "$(P):STDEVENTENABLE_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),0,5)STDEVENTENABLE")
+}
+record(longout, "$(P):STDEVENTENABLE")
+{
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT),0,5)STDEVENTENABLE")
+}
+record(longin, "$(P):STDEVENTSTATUS_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),0,5)STDEVENTSTATUS")
+}
+record(longout, "$(P):ALLOWLOCAL")
+{
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT),0,5)ALLOWLOCAL")
+}
+record(longout, "$(P):LOCALLOCKOUT")
+{
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT),0,5)LOCALLOCKOUT")
+}
+record(longout, "$(P):LOCALONLY")
+{
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT),0,5)LOCALONLY")
+}
+record(longout, "$(P):REMOTEONLY")
+{
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT),0,5)REMOTEONLY")
+}
+record(longout, "$(P):RESETINSTRUMENT")
+{
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT),0,5)RESETINSTRUMENT")
+}
+record(longin, "$(P):SERVICEREQENABLE_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),0,5)SERVICEREQENABLE")
+}
+record(longout, "$(P):SERVICEREQENABLE")
+{
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT),0,5)SERVICEREQENABLE")
+}
+record(longin, "$(P):STDSTATUSREGISTER_RBV")
+{
+  field(SCAN, "I/O Intr")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),0,5)STDSTATUSREGISTER")
+}
+#*!*Section template end*!*

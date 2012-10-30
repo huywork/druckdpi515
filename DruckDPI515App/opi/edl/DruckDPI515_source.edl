@@ -1,0 +1,640 @@
+4 0 1
+beginScreenProperties
+h 600
+major 4
+minor 0
+release 1
+w 500
+x 0
+y 0
+bgColor index 3
+botShadowColor index 11
+btnFont "arial-bold-r-14.0"
+ctlBgColor1 index 3
+ctlBgColor2 index 14
+ctlFgColor1 index 25
+ctlFgColor2 index 0
+ctlFont "arial-bold-r-14.0"
+fgColor index 14
+font "arial-medium-r-14.0"
+showGrid
+snapToGrid
+textColor index 14
+topShadowColor index 1
+endScreenProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+h 20
+major 4
+minor 4
+release 0
+w 95
+x 100
+y 5
+bgColor index 10
+controlPv "$(P):SETPOINTEFFORT_RBV"
+fgColor index 15
+font "arial-bold-r-12.0"
+fontAlign "center"
+limitsFromDb
+nullColor index 0
+showUnits
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+h 20
+major 4
+minor 1
+release 0
+w 95
+x 0
+y 5
+bgColor index 3
+fgColor index 14
+font "arial-bold-r-12.0"
+fontAlign "left"
+value {
+  "  SetPointEffort  "
+}
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+h 20
+major 4
+minor 4
+release 0
+w 95
+x 100
+y 30
+bgColor index 10
+controlPv "$(P):INLIMITS_RBV"
+fgColor index 15
+font "arial-bold-r-12.0"
+fontAlign "center"
+limitsFromDb
+nullColor index 0
+showUnits
+endObjectProperties
+
+# (Textentry)
+object TextentryClass
+beginObjectProperties
+h 20
+major 10
+minor 0
+release 0
+w 95
+x 200
+y 30
+bgColor index 3
+controlPv "$(P):INLIMITS"
+fgColor index 25
+fill
+font "arial-bold-r-12.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+h 20
+major 4
+minor 1
+release 0
+w 95
+x 0
+y 30
+bgColor index 3
+fgColor index 14
+font "arial-bold-r-12.0"
+fontAlign "left"
+value {
+  "  InLimits  "
+}
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+h 20
+major 4
+minor 4
+release 0
+w 95
+x 100
+y 55
+bgColor index 10
+controlPv "$(P):INLIMITSTIME_RBV"
+fgColor index 15
+font "arial-bold-r-12.0"
+fontAlign "center"
+limitsFromDb
+nullColor index 0
+showUnits
+endObjectProperties
+
+# (Textentry)
+object TextentryClass
+beginObjectProperties
+h 20
+major 10
+minor 0
+release 0
+w 95
+x 200
+y 55
+bgColor index 3
+controlPv "$(P):INLIMITSTIME"
+fgColor index 25
+fill
+font "arial-bold-r-12.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+h 20
+major 4
+minor 1
+release 0
+w 95
+x 0
+y 55
+bgColor index 3
+fgColor index 14
+font "arial-bold-r-12.0"
+fontAlign "left"
+value {
+  "  InLimitsTime  "
+}
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+h 20
+major 4
+minor 4
+release 0
+w 95
+x 100
+y 80
+bgColor index 10
+controlPv "$(P):PRESSURESETPOINT_RBV"
+fgColor index 15
+font "arial-bold-r-12.0"
+fontAlign "center"
+limitsFromDb
+nullColor index 0
+showUnits
+endObjectProperties
+
+# (Textentry)
+object TextentryClass
+beginObjectProperties
+h 20
+major 10
+minor 0
+release 0
+w 95
+x 200
+y 80
+bgColor index 3
+controlPv "$(P):PRESSURESETPOINT"
+fgColor index 25
+fill
+font "arial-bold-r-12.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+h 20
+major 4
+minor 1
+release 0
+w 95
+x 0
+y 80
+bgColor index 3
+fgColor index 14
+font "arial-bold-r-12.0"
+fontAlign "left"
+value {
+  "  PressureSetPoint  "
+}
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+h 20
+major 4
+minor 0
+release 0
+w 95
+x 100
+y 105
+3d
+botShadowColor index 11
+controlPv "$(P):PERFORMVENT"
+fgColor index 25
+font "arial-bold-r-12.0"
+offColor index 3
+offLabel PerformVent
+onColor index 3
+onLabel PerformVent
+pressValue "1"
+topShadowColor index 1
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+h 20
+major 4
+minor 0
+release 0
+w 95
+x 100
+y 130
+3d
+botShadowColor index 11
+controlPv "$(P):ABORTVENT"
+fgColor index 25
+font "arial-bold-r-12.0"
+offColor index 3
+offLabel AbortVent
+onColor index 3
+onLabel AbortVent
+pressValue "0"
+topShadowColor index 1
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+h 20
+major 4
+minor 4
+release 0
+w 95
+x 100
+y 155
+bgColor index 10
+controlPv "$(P):VENTSTATE_RBV"
+fgColor index 15
+font "arial-bold-r-12.0"
+fontAlign "center"
+limitsFromDb
+nullColor index 0
+showUnits
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+h 20
+major 4
+minor 1
+release 0
+w 95
+x 0
+y 155
+bgColor index 3
+fgColor index 14
+font "arial-bold-r-12.0"
+fontAlign "left"
+value {
+  "  VentState  "
+}
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+h 20
+major 4
+minor 4
+release 0
+w 95
+x 100
+y 180
+bgColor index 10
+controlPv "$(P):VENTTIME_RBV"
+fgColor index 15
+font "arial-bold-r-12.0"
+fontAlign "center"
+limitsFromDb
+nullColor index 0
+showUnits
+endObjectProperties
+
+# (Textentry)
+object TextentryClass
+beginObjectProperties
+h 20
+major 10
+minor 0
+release 0
+w 95
+x 200
+y 180
+bgColor index 3
+controlPv "$(P):VENTTIME"
+fgColor index 25
+fill
+font "arial-bold-r-12.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+h 20
+major 4
+minor 1
+release 0
+w 95
+x 0
+y 180
+bgColor index 3
+fgColor index 14
+font "arial-bold-r-12.0"
+fontAlign "left"
+value {
+  "  VentTime  "
+}
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+h 20
+major 4
+minor 4
+release 0
+w 95
+x 100
+y 205
+bgColor index 10
+controlPv "$(P):SOURCERANGE_RBV"
+fgColor index 15
+font "arial-bold-r-12.0"
+fontAlign "center"
+limitsFromDb
+nullColor index 0
+showUnits
+endObjectProperties
+
+# (Textentry)
+object TextentryClass
+beginObjectProperties
+h 20
+major 10
+minor 0
+release 0
+w 95
+x 200
+y 205
+bgColor index 3
+controlPv "$(P):SOURCERANGE"
+fgColor index 25
+fill
+font "arial-bold-r-12.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+h 20
+major 4
+minor 1
+release 0
+w 95
+x 0
+y 205
+bgColor index 3
+fgColor index 14
+font "arial-bold-r-12.0"
+fontAlign "left"
+value {
+  "  SourceRange  "
+}
+endObjectProperties
+
+# (Menu Button)
+object activeMenuButtonClass
+beginObjectProperties
+h 20
+major 4
+minor 0
+release 0
+w 95
+x 100
+y 230
+bgColor index 3
+botShadowColor index 11
+controlPv "$(P):AUTOSOURCERANGE"
+fgColor index 25
+font "arial-bold-r-12.0"
+inconsistentColor index 0
+indicatorPv "$(P):AUTOSOURCERANGE_RBV"
+topShadowColor index 1
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+h 20
+major 4
+minor 1
+release 0
+w 95
+x 0
+y 230
+bgColor index 3
+fgColor index 14
+font "arial-bold-r-12.0"
+fontAlign "left"
+value {
+  "  AutoSourceRange  "
+}
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+h 20
+major 4
+minor 4
+release 0
+w 95
+x 100
+y 255
+bgColor index 10
+controlPv "$(P):SOURCERANGELOW_RBV"
+fgColor index 15
+font "arial-bold-r-12.0"
+fontAlign "center"
+limitsFromDb
+nullColor index 0
+showUnits
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+h 20
+major 4
+minor 1
+release 0
+w 95
+x 0
+y 255
+bgColor index 3
+fgColor index 14
+font "arial-bold-r-12.0"
+fontAlign "left"
+value {
+  "  SourceRangeLow  "
+}
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+h 20
+major 4
+minor 4
+release 0
+w 95
+x 100
+y 280
+bgColor index 10
+controlPv "$(P):PRESSURESLEWRATE_RBV"
+fgColor index 15
+font "arial-bold-r-12.0"
+fontAlign "center"
+limitsFromDb
+nullColor index 0
+showUnits
+endObjectProperties
+
+# (Textentry)
+object TextentryClass
+beginObjectProperties
+h 20
+major 10
+minor 0
+release 0
+w 95
+x 200
+y 280
+bgColor index 3
+controlPv "$(P):PRESSURESLEWRATE"
+fgColor index 25
+fill
+font "arial-bold-r-12.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+h 20
+major 4
+minor 1
+release 0
+w 95
+x 0
+y 280
+bgColor index 3
+fgColor index 14
+font "arial-bold-r-12.0"
+fontAlign "left"
+value {
+  "  PressureSlewRate  "
+}
+endObjectProperties
+
+# (Menu Button)
+object activeMenuButtonClass
+beginObjectProperties
+h 20
+major 4
+minor 0
+release 0
+w 95
+x 100
+y 305
+bgColor index 3
+botShadowColor index 11
+controlPv "$(P):PRESSURESLEWMODE"
+fgColor index 25
+font "arial-bold-r-12.0"
+inconsistentColor index 0
+indicatorPv "$(P):PRESSURESLEWMODE_RBV"
+topShadowColor index 1
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+h 20
+major 4
+minor 1
+release 0
+w 95
+x 0
+y 305
+bgColor index 3
+fgColor index 14
+font "arial-bold-r-12.0"
+fontAlign "left"
+value {
+  "  PressureSlewMode  "
+}
+endObjectProperties
+
+# (Menu Button)
+object activeMenuButtonClass
+beginObjectProperties
+h 20
+major 4
+minor 0
+release 0
+w 95
+x 100
+y 330
+bgColor index 3
+botShadowColor index 11
+controlPv "$(P):PRESSUREOVERSHOOT"
+fgColor index 25
+font "arial-bold-r-12.0"
+inconsistentColor index 0
+indicatorPv "$(P):PRESSUREOVERSHOOT_RBV"
+topShadowColor index 1
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+h 20
+major 4
+minor 1
+release 0
+w 95
+x 0
+y 330
+bgColor index 3
+fgColor index 14
+font "arial-bold-r-12.0"
+fontAlign "left"
+value {
+  "  PressureOvershoot  "
+}
+endObjectProperties

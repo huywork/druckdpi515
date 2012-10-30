@@ -1,1 +1,3 @@
-# Place any example specific dependencies here
+SUPPORT= /dls_sw/prod/R3.14.11/support
+WORK= /dls_sw/work/R3.14.11/support
+

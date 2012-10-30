@@ -1,0 +1,304 @@
+4 0 1
+beginScreenProperties
+h 600
+major 4
+minor 0
+release 1
+w 500
+x 0
+y 0
+bgColor index 3
+botShadowColor index 11
+btnFont "arial-bold-r-14.0"
+ctlBgColor1 index 3
+ctlBgColor2 index 14
+ctlFgColor1 index 25
+ctlFgColor2 index 0
+ctlFont "arial-bold-r-14.0"
+fgColor index 14
+font "arial-medium-r-14.0"
+showGrid
+snapToGrid
+textColor index 14
+topShadowColor index 1
+endScreenProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+h 20
+major 4
+minor 4
+release 0
+w 95
+x 100
+y 5
+bgColor index 10
+controlPv "$(P):PRESSUREUNITS_RBV"
+fgColor index 15
+font "arial-bold-r-12.0"
+fontAlign "center"
+limitsFromDb
+nullColor index 0
+showUnits
+endObjectProperties
+
+# (Textentry)
+object TextentryClass
+beginObjectProperties
+h 20
+major 10
+minor 0
+release 0
+w 95
+x 200
+y 5
+bgColor index 3
+controlPv "$(P):PRESSUREUNITS"
+fgColor index 25
+fill
+font "arial-bold-r-12.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+h 20
+major 4
+minor 1
+release 0
+w 95
+x 0
+y 5
+bgColor index 3
+fgColor index 14
+font "arial-bold-r-12.0"
+fontAlign "left"
+value {
+  "  PressureUnits  "
+}
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+h 20
+major 4
+minor 4
+release 0
+w 95
+x 100
+y 30
+bgColor index 10
+controlPv "$(P):USERUNIT1NAME_RBV"
+fgColor index 15
+font "arial-bold-r-12.0"
+fontAlign "center"
+limitsFromDb
+nullColor index 0
+showUnits
+endObjectProperties
+
+# (Textentry)
+object TextentryClass
+beginObjectProperties
+h 20
+major 10
+minor 0
+release 0
+w 95
+x 200
+y 30
+bgColor index 3
+controlPv "$(P):USERUNIT1NAME"
+fgColor index 25
+fill
+font "arial-bold-r-12.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+h 20
+major 4
+minor 1
+release 0
+w 95
+x 0
+y 30
+bgColor index 3
+fgColor index 14
+font "arial-bold-r-12.0"
+fontAlign "left"
+value {
+  "  UserUnit1Name  "
+}
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+h 20
+major 4
+minor 4
+release 0
+w 95
+x 100
+y 55
+bgColor index 10
+controlPv "$(P):USERUNIT1FACTOR_RBV"
+fgColor index 15
+font "arial-bold-r-12.0"
+fontAlign "center"
+limitsFromDb
+nullColor index 0
+showUnits
+endObjectProperties
+
+# (Textentry)
+object TextentryClass
+beginObjectProperties
+h 20
+major 10
+minor 0
+release 0
+w 95
+x 200
+y 55
+bgColor index 3
+controlPv "$(P):USERUNIT1FACTOR"
+fgColor index 25
+fill
+font "arial-bold-r-12.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+h 20
+major 4
+minor 1
+release 0
+w 95
+x 0
+y 55
+bgColor index 3
+fgColor index 14
+font "arial-bold-r-12.0"
+fontAlign "left"
+value {
+  "  UserUnit1Factor  "
+}
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+h 20
+major 4
+minor 4
+release 0
+w 95
+x 100
+y 80
+bgColor index 10
+controlPv "$(P):USERUNIT2NAME_RBV"
+fgColor index 15
+font "arial-bold-r-12.0"
+fontAlign "center"
+limitsFromDb
+nullColor index 0
+showUnits
+endObjectProperties
+
+# (Textentry)
+object TextentryClass
+beginObjectProperties
+h 20
+major 10
+minor 0
+release 0
+w 95
+x 200
+y 80
+bgColor index 3
+controlPv "$(P):USERUNIT2NAME"
+fgColor index 25
+fill
+font "arial-bold-r-12.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+h 20
+major 4
+minor 1
+release 0
+w 95
+x 0
+y 80
+bgColor index 3
+fgColor index 14
+font "arial-bold-r-12.0"
+fontAlign "left"
+value {
+  "  UserUnit2Name  "
+}
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+h 20
+major 4
+minor 4
+release 0
+w 95
+x 100
+y 105
+bgColor index 10
+controlPv "$(P):USERUNIT2FACTOR_RBV"
+fgColor index 15
+font "arial-bold-r-12.0"
+fontAlign "center"
+limitsFromDb
+nullColor index 0
+showUnits
+endObjectProperties
+
+# (Textentry)
+object TextentryClass
+beginObjectProperties
+h 20
+major 10
+minor 0
+release 0
+w 95
+x 200
+y 105
+bgColor index 3
+controlPv "$(P):USERUNIT2FACTOR"
+fgColor index 25
+fill
+font "arial-bold-r-12.0"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+h 20
+major 4
+minor 1
+release 0
+w 95
+x 0
+y 105
+bgColor index 3
+fgColor index 14
+font "arial-bold-r-12.0"
+fontAlign "left"
+value {
+  "  UserUnit2Factor  "
+}
+endObjectProperties
