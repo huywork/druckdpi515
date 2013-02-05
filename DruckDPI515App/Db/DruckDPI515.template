@@ -16,6 +16,7 @@ record(longout, "$(P):ABORTZERO")
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),0,5)ABORTZERO")
 }
+# % archiver 10 monitor VAL
 record(mbbi, "$(P):AUTOZEROSTATE_RBV")
 {
   field(SCAN, "I/O Intr")
@@ -32,6 +33,7 @@ record(mbbi, "$(P):AUTOZEROSTATE_RBV")
   field(FRVL, "4")
   field(FRST, "aborted")
 }
+# % archiver 10 monitor VAL
 record(ai, "$(P):AUTOZEROVAL_RBV")
 {
   field(SCAN, "I/O Intr")
@@ -39,17 +41,21 @@ record(ai, "$(P):AUTOZEROVAL_RBV")
   field(INP,  "@asyn($(PORT),0,5)AUTOZEROVAL")
   field(PREC, "4")
 }
+# % archiver 10 monitor VAL
+# % autosave 1 VAL
 record(ao, "$(P):AUTOZEROVAL")
 {
   field(DTYP, "asynFloat64")
   field(OUT,  "@asyn($(PORT),0,5)AUTOZEROVAL")
 }
+# % archiver 10 monitor VAL
 record(longin, "$(P):TIMEDZERO_RBV")
 {
   field(SCAN, "I/O Intr")
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),0,5)TIMEDZERO")
 }
+# % archiver 10 monitor VAL
 record(mbbi, "$(P):TIMEDZEROSTATE_RBV")
 {
   field(SCAN, "I/O Intr")
@@ -60,6 +66,8 @@ record(mbbi, "$(P):TIMEDZEROSTATE_RBV")
   field(ONVL, "1")
   field(ONST, "on")
 }
+# % archiver 10 monitor VAL
+# % autosave 1 VAL
 record(mbbo, "$(P):TIMEDZEROSTATE")
 {
   field(DTYP, "asynInt32")
@@ -69,6 +77,7 @@ record(mbbo, "$(P):TIMEDZEROSTATE")
   field(ONVL, "1")
   field(ONST, "on")
 }
+# % archiver 10 monitor VAL
 record(mbbi, "$(P):DIGITALIN_RBV")
 {
   field(SCAN, "I/O Intr")
@@ -79,6 +88,7 @@ record(mbbi, "$(P):DIGITALIN_RBV")
   field(ONVL, "1")
   field(ONST, "on")
 }
+# % archiver 10 monitor VAL
 record(waveform, "$(P):INSTRCATALOGUE_RBV")
 {
   field(SCAN, "I/O Intr")
@@ -87,12 +97,14 @@ record(waveform, "$(P):INSTRCATALOGUE_RBV")
   field(FTVL, "CHAR")
   field(NELM, "256")
 }
+# % archiver 10 monitor VAL
 record(stringin, "$(P):RANGENAME_RBV")
 {
   field(SCAN, "I/O Intr")
   field(DTYP, "asynOctetRead")
   field(INP,  "@asyn($(PORT),0,5)RANGENAME")
 }
+# % archiver 10 monitor VAL
 record(ai, "$(P):MAXRANGE_RBV")
 {
   field(SCAN, "I/O Intr")
@@ -100,6 +112,7 @@ record(ai, "$(P):MAXRANGE_RBV")
   field(INP,  "@asyn($(PORT),0,5)MAXRANGE")
   field(PREC, "4")
 }
+# % archiver 10 monitor VAL
 record(ai, "$(P):MINRANGE_RBV")
 {
   field(SCAN, "I/O Intr")
@@ -107,24 +120,28 @@ record(ai, "$(P):MINRANGE_RBV")
   field(INP,  "@asyn($(PORT),0,5)MINRANGE")
   field(PREC, "4")
 }
+# % archiver 10 monitor VAL
 record(longin, "$(P):INSTRNUMBER_RBV")
 {
   field(SCAN, "I/O Intr")
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),0,5)INSTRNUMBER")
 }
+# % archiver 10 monitor VAL
 record(stringin, "$(P):UNITS_RBV")
 {
   field(SCAN, "I/O Intr")
   field(DTYP, "asynOctetRead")
   field(INP,  "@asyn($(PORT),0,5)UNITS")
 }
+# % archiver 10 monitor VAL
 record(longin, "$(P):INSTRVERSION_RBV")
 {
   field(SCAN, "I/O Intr")
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),0,5)INSTRVERSION")
 }
+# % archiver 10 monitor VAL
 record(mbbi, "$(P):ISOLATIONVALVE_RBV")
 {
   field(SCAN, "I/O Intr")
@@ -135,6 +152,8 @@ record(mbbi, "$(P):ISOLATIONVALVE_RBV")
   field(ONVL, "1")
   field(ONST, "on")
 }
+# % archiver 10 monitor VAL
+# % autosave 1 VAL
 record(mbbo, "$(P):ISOLATIONVALVE")
 {
   field(DTYP, "asynInt32")
@@ -144,6 +163,7 @@ record(mbbo, "$(P):ISOLATIONVALVE")
   field(ONVL, "1")
   field(ONST, "on")
 }
+# % archiver 10 monitor VAL
 record(mbbi, "$(P):DIGITALOUT1_RBV")
 {
   field(SCAN, "I/O Intr")
@@ -154,6 +174,8 @@ record(mbbi, "$(P):DIGITALOUT1_RBV")
   field(ONVL, "1")
   field(ONST, "high")
 }
+# % archiver 10 monitor VAL
+# % autosave 1 VAL
 record(mbbo, "$(P):DIGITALOUT1")
 {
   field(DTYP, "asynInt32")
@@ -163,6 +185,7 @@ record(mbbo, "$(P):DIGITALOUT1")
   field(ONVL, "1")
   field(ONST, "high")
 }
+# % archiver 10 monitor VAL
 record(mbbi, "$(P):DIGITALOUT2_RBV")
 {
   field(SCAN, "I/O Intr")
@@ -173,6 +196,8 @@ record(mbbi, "$(P):DIGITALOUT2_RBV")
   field(ONVL, "1")
   field(ONST, "high")
 }
+# % archiver 10 monitor VAL
+# % autosave 1 VAL
 record(mbbo, "$(P):DIGITALOUT2")
 {
   field(DTYP, "asynInt32")
@@ -182,6 +207,7 @@ record(mbbo, "$(P):DIGITALOUT2")
   field(ONVL, "1")
   field(ONST, "high")
 }
+# % archiver 10 monitor VAL
 record(mbbi, "$(P):OUTPUTSTATE_RBV")
 {
   field(SCAN, "I/O Intr")
@@ -192,6 +218,8 @@ record(mbbi, "$(P):OUTPUTSTATE_RBV")
   field(ONVL, "1")
   field(ONST, "on")
 }
+# % archiver 10 monitor VAL
+# % autosave 1 VAL
 record(mbbo, "$(P):OUTPUTSTATE")
 {
   field(DTYP, "asynInt32")
@@ -201,6 +229,7 @@ record(mbbo, "$(P):OUTPUTSTATE")
   field(ONVL, "1")
   field(ONST, "on")
 }
+# % archiver 10 monitor VAL
 record(ai, "$(P):PRESSURE_RBV")
 {
   field(SCAN, "I/O Intr")
@@ -208,6 +237,7 @@ record(ai, "$(P):PRESSURE_RBV")
   field(INP,  "@asyn($(PORT),0,5)PRESSURE")
   field(PREC, "4")
 }
+# % archiver 10 monitor VAL
 record(ai, "$(P):BAROMETRIC_RBV")
 {
   field(SCAN, "I/O Intr")
@@ -215,6 +245,7 @@ record(ai, "$(P):BAROMETRIC_RBV")
   field(INP,  "@asyn($(PORT),0,5)BAROMETRIC")
   field(PREC, "4")
 }
+# % archiver 10 monitor VAL
 record(mbbi, "$(P):GASUSED_RBV")
 {
   field(SCAN, "I/O Intr")
@@ -225,6 +256,8 @@ record(mbbi, "$(P):GASUSED_RBV")
   field(ONVL, "1")
   field(ONST, "nitr")
 }
+# % archiver 10 monitor VAL
+# % autosave 1 VAL
 record(mbbo, "$(P):GASUSED")
 {
   field(DTYP, "asynInt32")
@@ -234,6 +267,7 @@ record(mbbo, "$(P):GASUSED")
   field(ONVL, "1")
   field(ONST, "nitr")
 }
+# % archiver 10 monitor VAL
 record(ai, "$(P):HEIGHT_RBV")
 {
   field(SCAN, "I/O Intr")
@@ -241,11 +275,14 @@ record(ai, "$(P):HEIGHT_RBV")
   field(INP,  "@asyn($(PORT),0,5)HEIGHT")
   field(PREC, "4")
 }
+# % archiver 10 monitor VAL
+# % autosave 1 VAL
 record(ao, "$(P):HEIGHT")
 {
   field(DTYP, "asynFloat64")
   field(OUT,  "@asyn($(PORT),0,5)HEIGHT")
 }
+# % archiver 10 monitor VAL
 record(mbbi, "$(P):HEADCORRSTATE_RBV")
 {
   field(SCAN, "I/O Intr")
@@ -256,6 +293,8 @@ record(mbbi, "$(P):HEADCORRSTATE_RBV")
   field(ONVL, "1")
   field(ONST, "on")
 }
+# % archiver 10 monitor VAL
+# % autosave 1 VAL
 record(mbbo, "$(P):HEADCORRSTATE")
 {
   field(DTYP, "asynInt32")
@@ -265,6 +304,7 @@ record(mbbo, "$(P):HEADCORRSTATE")
   field(ONVL, "1")
   field(ONST, "on")
 }
+# % archiver 10 monitor VAL
 record(ai, "$(P):FILTERFREQUENCY_RBV")
 {
   field(SCAN, "I/O Intr")
@@ -272,11 +312,14 @@ record(ai, "$(P):FILTERFREQUENCY_RBV")
   field(INP,  "@asyn($(PORT),0,5)FILTERFREQUENCY")
   field(PREC, "4")
 }
+# % archiver 10 monitor VAL
+# % autosave 1 VAL
 record(ao, "$(P):FILTERFREQUENCY")
 {
   field(DTYP, "asynFloat64")
   field(OUT,  "@asyn($(PORT),0,5)FILTERFREQUENCY")
 }
+# % archiver 10 monitor VAL
 record(mbbi, "$(P):FILTERSTATE_RBV")
 {
   field(SCAN, "I/O Intr")
@@ -287,6 +330,8 @@ record(mbbi, "$(P):FILTERSTATE_RBV")
   field(ONVL, "1")
   field(ONST, "on")
 }
+# % archiver 10 monitor VAL
+# % autosave 1 VAL
 record(mbbo, "$(P):FILTERSTATE")
 {
   field(DTYP, "asynInt32")
@@ -296,17 +341,21 @@ record(mbbo, "$(P):FILTERSTATE")
   field(ONVL, "1")
   field(ONST, "on")
 }
+# % archiver 10 monitor VAL
 record(longin, "$(P):FILLTIME_RBV")
 {
   field(SCAN, "I/O Intr")
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),0,5)FILLTIME")
 }
+# % archiver 10 monitor VAL
+# % autosave 1 VAL
 record(longout, "$(P):FILLTIME")
 {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),0,5)FILLTIME")
 }
+# % archiver 10 monitor VAL
 record(mbbi, "$(P):FILLTIMESTATE_RBV")
 {
   field(SCAN, "I/O Intr")
@@ -317,6 +366,8 @@ record(mbbi, "$(P):FILLTIMESTATE_RBV")
   field(ONVL, "1")
   field(ONST, "on")
 }
+# % archiver 10 monitor VAL
+# % autosave 1 VAL
 record(mbbo, "$(P):FILLTIMESTATE")
 {
   field(DTYP, "asynInt32")
@@ -326,23 +377,28 @@ record(mbbo, "$(P):FILLTIMESTATE")
   field(ONVL, "1")
   field(ONST, "on")
 }
+# % archiver 10 monitor VAL
 record(stringin, "$(P):SENSERANGE_RBV")
 {
   field(SCAN, "I/O Intr")
   field(DTYP, "asynOctetRead")
   field(INP,  "@asyn($(PORT),0,5)SENSERANGE")
 }
+# % archiver 10 monitor VAL
+# % autosave 1 VAL
 record(stringout, "$(P):SENSERANGE")
 {
   field(DTYP, "asynOctetWrite")
   field(OUT,  "@asyn($(PORT),0,5)SENSERANGE")
 }
+# % archiver 10 monitor VAL
 record(longin, "$(P):SETPOINTEFFORT_RBV")
 {
   field(SCAN, "I/O Intr")
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),0,5)SETPOINTEFFORT")
 }
+# % archiver 10 monitor VAL
 record(ai, "$(P):INLIMITS_RBV")
 {
   field(SCAN, "I/O Intr")
@@ -350,11 +406,14 @@ record(ai, "$(P):INLIMITS_RBV")
   field(INP,  "@asyn($(PORT),0,5)INLIMITS")
   field(PREC, "4")
 }
+# % archiver 10 monitor VAL
+# % autosave 1 VAL
 record(ao, "$(P):INLIMITS")
 {
   field(DTYP, "asynFloat64")
   field(OUT,  "@asyn($(PORT),0,5)INLIMITS")
 }
+# % archiver 10 monitor VAL
 record(ai, "$(P):INLIMITSTIME_RBV")
 {
   field(SCAN, "I/O Intr")
@@ -362,11 +421,14 @@ record(ai, "$(P):INLIMITSTIME_RBV")
   field(INP,  "@asyn($(PORT),0,5)INLIMITSTIME")
   field(PREC, "4")
 }
+# % archiver 10 monitor VAL
+# % autosave 1 VAL
 record(ao, "$(P):INLIMITSTIME")
 {
   field(DTYP, "asynFloat64")
   field(OUT,  "@asyn($(PORT),0,5)INLIMITSTIME")
 }
+# % archiver 10 monitor VAL
 record(ai, "$(P):PRESSURESETPOINT_RBV")
 {
   field(SCAN, "I/O Intr")
@@ -374,6 +436,8 @@ record(ai, "$(P):PRESSURESETPOINT_RBV")
   field(INP,  "@asyn($(PORT),0,5)PRESSURESETPOINT")
   field(PREC, "4")
 }
+# % archiver 10 monitor VAL
+# % autosave 1 VAL
 record(ao, "$(P):PRESSURESETPOINT")
 {
   field(DTYP, "asynFloat64")
@@ -389,6 +453,7 @@ record(longout, "$(P):ABORTVENT")
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),0,5)ABORTVENT")
 }
+# % archiver 10 monitor VAL
 record(mbbi, "$(P):VENTSTATE_RBV")
 {
   field(SCAN, "I/O Intr")
@@ -405,28 +470,35 @@ record(mbbi, "$(P):VENTSTATE_RBV")
   field(FRVL, "4")
   field(FRST, "aborted")
 }
+# % archiver 10 monitor VAL
 record(longin, "$(P):VENTTIME_RBV")
 {
   field(SCAN, "I/O Intr")
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),0,5)VENTTIME")
 }
+# % archiver 10 monitor VAL
+# % autosave 1 VAL
 record(longout, "$(P):VENTTIME")
 {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),0,5)VENTTIME")
 }
+# % archiver 10 monitor VAL
 record(stringin, "$(P):SOURCERANGE_RBV")
 {
   field(SCAN, "I/O Intr")
   field(DTYP, "asynOctetRead")
   field(INP,  "@asyn($(PORT),0,5)SOURCERANGE")
 }
+# % archiver 10 monitor VAL
+# % autosave 1 VAL
 record(stringout, "$(P):SOURCERANGE")
 {
   field(DTYP, "asynOctetWrite")
   field(OUT,  "@asyn($(PORT),0,5)SOURCERANGE")
 }
+# % archiver 10 monitor VAL
 record(mbbi, "$(P):AUTOSOURCERANGE_RBV")
 {
   field(SCAN, "I/O Intr")
@@ -437,6 +509,8 @@ record(mbbi, "$(P):AUTOSOURCERANGE_RBV")
   field(ONVL, "1")
   field(ONST, "on")
 }
+# % archiver 10 monitor VAL
+# % autosave 1 VAL
 record(mbbo, "$(P):AUTOSOURCERANGE")
 {
   field(DTYP, "asynInt32")
@@ -446,12 +520,14 @@ record(mbbo, "$(P):AUTOSOURCERANGE")
   field(ONVL, "1")
   field(ONST, "on")
 }
+# % archiver 10 monitor VAL
 record(stringin, "$(P):SOURCERANGELOW_RBV")
 {
   field(SCAN, "I/O Intr")
   field(DTYP, "asynOctetRead")
   field(INP,  "@asyn($(PORT),0,5)SOURCERANGELOW")
 }
+# % archiver 10 monitor VAL
 record(ai, "$(P):PRESSURESLEWRATE_RBV")
 {
   field(SCAN, "I/O Intr")
@@ -459,11 +535,14 @@ record(ai, "$(P):PRESSURESLEWRATE_RBV")
   field(INP,  "@asyn($(PORT),0,5)PRESSURESLEWRATE")
   field(PREC, "4")
 }
+# % archiver 10 monitor VAL
+# % autosave 1 VAL
 record(ao, "$(P):PRESSURESLEWRATE")
 {
   field(DTYP, "asynFloat64")
   field(OUT,  "@asyn($(PORT),0,5)PRESSURESLEWRATE")
 }
+# % archiver 10 monitor VAL
 record(mbbi, "$(P):PRESSURESLEWMODE_RBV")
 {
   field(SCAN, "I/O Intr")
@@ -474,6 +553,8 @@ record(mbbi, "$(P):PRESSURESLEWMODE_RBV")
   field(ONVL, "1")
   field(ONST, "val")
 }
+# % archiver 10 monitor VAL
+# % autosave 1 VAL
 record(mbbo, "$(P):PRESSURESLEWMODE")
 {
   field(DTYP, "asynInt32")
@@ -483,6 +564,7 @@ record(mbbo, "$(P):PRESSURESLEWMODE")
   field(ONVL, "1")
   field(ONST, "val")
 }
+# % archiver 10 monitor VAL
 record(mbbi, "$(P):PRESSUREOVERSHOOT_RBV")
 {
   field(SCAN, "I/O Intr")
@@ -493,6 +575,8 @@ record(mbbi, "$(P):PRESSUREOVERSHOOT_RBV")
   field(ONVL, "1")
   field(ONST, "allowed")
 }
+# % archiver 10 monitor VAL
+# % autosave 1 VAL
 record(mbbo, "$(P):PRESSUREOVERSHOOT")
 {
   field(DTYP, "asynInt32")
@@ -502,86 +586,105 @@ record(mbbo, "$(P):PRESSUREOVERSHOOT")
   field(ONVL, "1")
   field(ONST, "allowed")
 }
+# % archiver 10 monitor VAL
 record(longin, "$(P):ENABLEREGISTER_RBV")
 {
   field(SCAN, "I/O Intr")
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),0,5)ENABLEREGISTER")
 }
+# % archiver 10 monitor VAL
+# % autosave 1 VAL
 record(longout, "$(P):ENABLEREGISTER")
 {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),0,5)ENABLEREGISTER")
 }
+# % archiver 10 monitor VAL
 record(longin, "$(P):EVENTREGISTER_RBV")
 {
   field(SCAN, "I/O Intr")
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),0,5)EVENTREGISTER")
 }
+# % archiver 10 monitor VAL
 record(longin, "$(P):PRESSURECONDITIONREGISTER_RBV")
 {
   field(SCAN, "I/O Intr")
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),0,5)PRESSURECONDITIONREGISTER")
 }
+# % archiver 10 monitor VAL
 record(longin, "$(P):PRESSUREENABLEREGISTER_RBV")
 {
   field(SCAN, "I/O Intr")
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),0,5)PRESSUREENABLEREGISTER")
 }
+# % archiver 10 monitor VAL
+# % autosave 1 VAL
 record(longout, "$(P):PRESSUREENABLEREGISTER")
 {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),0,5)PRESSUREENABLEREGISTER")
 }
+# % archiver 10 monitor VAL
 record(longin, "$(P):PRESSUREEVENTREGISTER_RBV")
 {
   field(SCAN, "I/O Intr")
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),0,5)PRESSUREEVENTREGISTER")
 }
+# % archiver 10 monitor VAL
 record(longin, "$(P):SYSTEMERRORNUMBER_RBV")
 {
   field(SCAN, "I/O Intr")
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),0,5)SYSTEMERRORNUMBER")
 }
+# % archiver 10 monitor VAL
 record(stringin, "$(P):SYSTEMERROR_RBV")
 {
   field(SCAN, "I/O Intr")
   field(DTYP, "asynOctetRead")
   field(INP,  "@asyn($(PORT),0,5)SYSTEMERROR")
 }
+# % archiver 10 monitor VAL
 record(stringin, "$(P):SYSTEMSCPIVERS_RBV")
 {
   field(SCAN, "I/O Intr")
   field(DTYP, "asynOctetRead")
   field(INP,  "@asyn($(PORT),0,5)SYSTEMSCPIVERS")
 }
+# % archiver 10 monitor VAL
 record(stringin, "$(P):PRESSUREUNITS_RBV")
 {
   field(SCAN, "I/O Intr")
   field(DTYP, "asynOctetRead")
   field(INP,  "@asyn($(PORT),0,5)PRESSUREUNITS")
 }
+# % archiver 10 monitor VAL
+# % autosave 1 VAL
 record(stringout, "$(P):PRESSUREUNITS")
 {
   field(DTYP, "asynOctetWrite")
   field(OUT,  "@asyn($(PORT),0,5)PRESSUREUNITS")
 }
+# % archiver 10 monitor VAL
 record(stringin, "$(P):USERUNIT1NAME_RBV")
 {
   field(SCAN, "I/O Intr")
   field(DTYP, "asynOctetRead")
   field(INP,  "@asyn($(PORT),0,5)USERUNIT1NAME")
 }
+# % archiver 10 monitor VAL
+# % autosave 1 VAL
 record(stringout, "$(P):USERUNIT1NAME")
 {
   field(DTYP, "asynOctetWrite")
   field(OUT,  "@asyn($(PORT),0,5)USERUNIT1NAME")
 }
+# % archiver 10 monitor VAL
 record(ai, "$(P):USERUNIT1FACTOR_RBV")
 {
   field(SCAN, "I/O Intr")
@@ -589,22 +692,28 @@ record(ai, "$(P):USERUNIT1FACTOR_RBV")
   field(INP,  "@asyn($(PORT),0,5)USERUNIT1FACTOR")
   field(PREC, "4")
 }
+# % archiver 10 monitor VAL
+# % autosave 1 VAL
 record(ao, "$(P):USERUNIT1FACTOR")
 {
   field(DTYP, "asynFloat64")
   field(OUT,  "@asyn($(PORT),0,5)USERUNIT1FACTOR")
 }
+# % archiver 10 monitor VAL
 record(stringin, "$(P):USERUNIT2NAME_RBV")
 {
   field(SCAN, "I/O Intr")
   field(DTYP, "asynOctetRead")
   field(INP,  "@asyn($(PORT),0,5)USERUNIT2NAME")
 }
+# % archiver 10 monitor VAL
+# % autosave 1 VAL
 record(stringout, "$(P):USERUNIT2NAME")
 {
   field(DTYP, "asynOctetWrite")
   field(OUT,  "@asyn($(PORT),0,5)USERUNIT2NAME")
 }
+# % archiver 10 monitor VAL
 record(ai, "$(P):USERUNIT2FACTOR_RBV")
 {
   field(SCAN, "I/O Intr")
@@ -612,6 +721,8 @@ record(ai, "$(P):USERUNIT2FACTOR_RBV")
   field(INP,  "@asyn($(PORT),0,5)USERUNIT2FACTOR")
   field(PREC, "4")
 }
+# % archiver 10 monitor VAL
+# % autosave 1 VAL
 record(ao, "$(P):USERUNIT2FACTOR")
 {
   field(DTYP, "asynFloat64")
@@ -622,17 +733,21 @@ record(longout, "$(P):CLEARSTATUS")
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),0,5)CLEARSTATUS")
 }
+# % archiver 10 monitor VAL
 record(longin, "$(P):STDEVENTENABLE_RBV")
 {
   field(SCAN, "I/O Intr")
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),0,5)STDEVENTENABLE")
 }
+# % archiver 10 monitor VAL
+# % autosave 1 VAL
 record(longout, "$(P):STDEVENTENABLE")
 {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),0,5)STDEVENTENABLE")
 }
+# % archiver 10 monitor VAL
 record(longin, "$(P):STDEVENTSTATUS_RBV")
 {
   field(SCAN, "I/O Intr")
@@ -664,17 +779,21 @@ record(longout, "$(P):RESETINSTRUMENT")
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),0,5)RESETINSTRUMENT")
 }
+# % archiver 10 monitor VAL
 record(longin, "$(P):SERVICEREQENABLE_RBV")
 {
   field(SCAN, "I/O Intr")
   field(DTYP, "asynInt32")
   field(INP,  "@asyn($(PORT),0,5)SERVICEREQENABLE")
 }
+# % archiver 10 monitor VAL
+# % autosave 1 VAL
 record(longout, "$(P):SERVICEREQENABLE")
 {
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),0,5)SERVICEREQENABLE")
 }
+# % archiver 10 monitor VAL
 record(longin, "$(P):STDSTATUSREGISTER_RBV")
 {
   field(SCAN, "I/O Intr")
