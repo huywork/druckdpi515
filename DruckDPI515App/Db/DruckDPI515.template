@@ -37,6 +37,7 @@ record(ai, "$(P):AUTOZEROVAL_RBV")
   field(SCAN, "I/O Intr")
   field(DTYP, "asynFloat64")
   field(INP,  "@asyn($(PORT),0,5)AUTOZEROVAL")
+  field(PREC, "4")
 }
 record(ao, "$(P):AUTOZEROVAL")
 {
@@ -97,12 +98,14 @@ record(ai, "$(P):MAXRANGE_RBV")
   field(SCAN, "I/O Intr")
   field(DTYP, "asynFloat64")
   field(INP,  "@asyn($(PORT),0,5)MAXRANGE")
+  field(PREC, "4")
 }
 record(ai, "$(P):MINRANGE_RBV")
 {
   field(SCAN, "I/O Intr")
   field(DTYP, "asynFloat64")
   field(INP,  "@asyn($(PORT),0,5)MINRANGE")
+  field(PREC, "4")
 }
 record(longin, "$(P):INSTRNUMBER_RBV")
 {
@@ -203,12 +206,14 @@ record(ai, "$(P):PRESSURE_RBV")
   field(SCAN, "I/O Intr")
   field(DTYP, "asynFloat64")
   field(INP,  "@asyn($(PORT),0,5)PRESSURE")
+  field(PREC, "4")
 }
 record(ai, "$(P):BAROMETRIC_RBV")
 {
   field(SCAN, "I/O Intr")
   field(DTYP, "asynFloat64")
   field(INP,  "@asyn($(PORT),0,5)BAROMETRIC")
+  field(PREC, "4")
 }
 record(mbbi, "$(P):GASUSED_RBV")
 {
@@ -234,6 +239,7 @@ record(ai, "$(P):HEIGHT_RBV")
   field(SCAN, "I/O Intr")
   field(DTYP, "asynFloat64")
   field(INP,  "@asyn($(PORT),0,5)HEIGHT")
+  field(PREC, "4")
 }
 record(ao, "$(P):HEIGHT")
 {
@@ -264,6 +270,7 @@ record(ai, "$(P):FILTERFREQUENCY_RBV")
   field(SCAN, "I/O Intr")
   field(DTYP, "asynFloat64")
   field(INP,  "@asyn($(PORT),0,5)FILTERFREQUENCY")
+  field(PREC, "4")
 }
 record(ao, "$(P):FILTERFREQUENCY")
 {
@@ -341,6 +348,7 @@ record(ai, "$(P):INLIMITS_RBV")
   field(SCAN, "I/O Intr")
   field(DTYP, "asynFloat64")
   field(INP,  "@asyn($(PORT),0,5)INLIMITS")
+  field(PREC, "4")
 }
 record(ao, "$(P):INLIMITS")
 {
@@ -352,6 +360,7 @@ record(ai, "$(P):INLIMITSTIME_RBV")
   field(SCAN, "I/O Intr")
   field(DTYP, "asynFloat64")
   field(INP,  "@asyn($(PORT),0,5)INLIMITSTIME")
+  field(PREC, "4")
 }
 record(ao, "$(P):INLIMITSTIME")
 {
@@ -363,6 +372,7 @@ record(ai, "$(P):PRESSURESETPOINT_RBV")
   field(SCAN, "I/O Intr")
   field(DTYP, "asynFloat64")
   field(INP,  "@asyn($(PORT),0,5)PRESSURESETPOINT")
+  field(PREC, "4")
 }
 record(ao, "$(P):PRESSURESETPOINT")
 {
@@ -447,6 +457,7 @@ record(ai, "$(P):PRESSURESLEWRATE_RBV")
   field(SCAN, "I/O Intr")
   field(DTYP, "asynFloat64")
   field(INP,  "@asyn($(PORT),0,5)PRESSURESLEWRATE")
+  field(PREC, "4")
 }
 record(ao, "$(P):PRESSURESLEWRATE")
 {
@@ -490,12 +501,6 @@ record(mbbo, "$(P):PRESSUREOVERSHOOT")
   field(ZRST, "not allowed")
   field(ONVL, "1")
   field(ONST, "allowed")
-}
-record(longin, "$(P):CONDITIONREGISTER_RBV")
-{
-  field(SCAN, "I/O Intr")
-  field(DTYP, "asynInt32")
-  field(INP,  "@asyn($(PORT),0,5)CONDITIONREGISTER")
 }
 record(longin, "$(P):ENABLEREGISTER_RBV")
 {
@@ -582,6 +587,7 @@ record(ai, "$(P):USERUNIT1FACTOR_RBV")
   field(SCAN, "I/O Intr")
   field(DTYP, "asynFloat64")
   field(INP,  "@asyn($(PORT),0,5)USERUNIT1FACTOR")
+  field(PREC, "4")
 }
 record(ao, "$(P):USERUNIT1FACTOR")
 {
@@ -604,6 +610,7 @@ record(ai, "$(P):USERUNIT2FACTOR_RBV")
   field(SCAN, "I/O Intr")
   field(DTYP, "asynFloat64")
   field(INP,  "@asyn($(PORT),0,5)USERUNIT2FACTOR")
+  field(PREC, "4")
 }
 record(ao, "$(P):USERUNIT2FACTOR")
 {

@@ -53,7 +53,6 @@ class DruckDPI515(scpi):
         self.add(item('SOUR:SLEW', '', 0, 0, None, scpi.readWrite, [param(None, None)]))
         self.add(item('SOUR:SLEW:MODE', '', 0, 0, None, scpi.readWrite, [param(['max', 'val'], None)]))
         self.add(item('SOUR:SLEW:OVER', '', 0, 0, None, scpi.readWrite, [param(['not allowed', 'allowed'], None)]))
-        self.add(item('STAT:OPER:COND', '', 0, 0, None, scpi.readOnly, [param(None, None)]))
         self.add(item('STAT:OPER:ENAB', '', 0, 0, None, scpi.readWrite, [param(None, None)]))
         self.add(item('STAT:OPER:EVEN', '', 0, 0, None, scpi.readOnly, [param(None, None)]))
         self.add(item('STAT:OPER:PRES:COND', '', 0, 0, None, scpi.readOnly, [param(None, None)]))

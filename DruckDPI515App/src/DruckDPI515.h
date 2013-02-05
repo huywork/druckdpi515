@@ -62,7 +62,6 @@ protected:
     int indexPressureSlewRate;
     int indexPressureSlewMode;
     int indexPressureOvershoot;
-    int indexConditionRegister;
     int indexEnableRegister;
     int indexEventRegister;
     int indexPressureConditionRegister;

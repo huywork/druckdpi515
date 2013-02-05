@@ -45,7 +45,6 @@
 #define indexPressureSlewRate_str "PRESSURESLEWRATE"
 #define indexPressureSlewMode_str "PRESSURESLEWMODE"
 #define indexPressureOvershoot_str "PRESSUREOVERSHOOT"
-#define indexConditionRegister_str "CONDITIONREGISTER"
 #define indexEnableRegister_str "ENABLEREGISTER"
 #define indexEventRegister_str "EVENTREGISTER"
 #define indexPressureConditionRegister_str "PRESSURECONDITIONREGISTER"
@@ -91,9 +90,9 @@ DruckDPI515::DruckDPI515(const char* portName, const char* devicePortName,
     createScpiItem(indexPerformZero_str, asynParamInt32, &indexPerformZero, "CAL:ZERO:AUTO", "", 0, 0, NULL, scpiCommand, NULL, 5, false);
     createScpiItem(indexAbortZero_str, asynParamInt32, &indexAbortZero, "CAL:ZERO:AUTO", "", 0, 0, NULL, scpiCommand, NULL, 5, false);
     createScpiItem(indexAutoZeroState_str, asynParamInt32, &indexAutoZeroState, "CAL:ZERO:AUTO", "", 0, 0, NULL, scpiReadOnly, NULL, 5, false);
-    createScpiItem(indexAutoZeroVal_str, asynParamFloat64, &indexAutoZeroVal, "CAL:ZERO:AUTO:VAL", "", 0, 0, NULL, scpiReadWrite, NULL, 5, false);
+    createScpiItem(indexAutoZeroVal_str, asynParamFloat64, &indexAutoZeroVal, "CAL:ZERO:AUTO:VAL", "", 0, 0, NULL, scpiReadWrite, NULL, 0, false);
     createScpiItem(indexTimedZero_str, asynParamInt32, &indexTimedZero, "CAL:ZERO:TIME", "", 0, 0, NULL, scpiReadOnly, NULL, 5, false);
-    createScpiItem(indexTimedZeroState_str, asynParamInt32, &indexTimedZeroState, "CAL:ZERO:TIME:STAT", "", 0, 0, NULL, scpiReadWrite, NULL, 5, false);
+    createScpiItem(indexTimedZeroState_str, asynParamInt32, &indexTimedZeroState, "CAL:ZERO:TIME:STAT", "", 0, 0, NULL, scpiReadWrite, NULL, 0, false);
     createScpiItem(indexDigitalIn_str, asynParamInt32, &indexDigitalIn, "INP:LOG", "", 0, 0, NULL, scpiReadOnly, NULL, 5, false);
     createScpiItem(indexInstrCatalogue_str, asynParamOctet, &indexInstrCatalogue, "INST:CAT", "", 0, 0, NULL, scpiReadOnly, NULL, 5, false);
     createScpiItem(indexRangeName_str, asynParamOctet, &indexRangeName, "INST:LIM1", "", 0, 0, NULL, scpiReadOnly, NULL, 5, false);
@@ -102,57 +101,56 @@ DruckDPI515::DruckDPI515(const char* portName, const char* devicePortName,
     createScpiItem(indexInstrNumber_str, asynParamInt32, &indexInstrNumber, "INST:SN", "", 0, 0, NULL, scpiReadOnly, NULL, 5, false);
     createScpiItem(indexUnits_str, asynParamOctet, &indexUnits, "INST:UNIT1", "", 0, 0, NULL, scpiReadOnly, NULL, 5, false);
     createScpiItem(indexInstrVersion_str, asynParamInt32, &indexInstrVersion, "INST:VERS", "", 0, 0, NULL, scpiReadOnly, NULL, 5, false);
-    createScpiItem(indexIsolationValve_str, asynParamInt32, &indexIsolationValve, "OUTP:ISOL", "", 0, 0, NULL, scpiReadWrite, NULL, 5, false);
-    createScpiItem(indexDigitalOut1_str, asynParamInt32, &indexDigitalOut1, "OUTP:LOG1:LEV", "", 0, 0, NULL, scpiReadWrite, NULL, 5, false);
-    createScpiItem(indexDigitalOut2_str, asynParamInt32, &indexDigitalOut2, "OUTP:LOG2:LEV", "", 0, 0, NULL, scpiReadWrite, NULL, 5, false);
-    createScpiItem(indexOutputState_str, asynParamInt32, &indexOutputState, "OUTP:STAT", "", 0, 0, NULL, scpiReadWrite, NULL, 5, false);
+    createScpiItem(indexIsolationValve_str, asynParamInt32, &indexIsolationValve, "OUTP:ISOL", "", 0, 0, NULL, scpiReadWrite, NULL, 0, false);
+    createScpiItem(indexDigitalOut1_str, asynParamInt32, &indexDigitalOut1, "OUTP:LOG1:LEV", "", 0, 0, NULL, scpiReadWrite, NULL, 0, false);
+    createScpiItem(indexDigitalOut2_str, asynParamInt32, &indexDigitalOut2, "OUTP:LOG2:LEV", "", 0, 0, NULL, scpiReadWrite, NULL, 0, false);
+    createScpiItem(indexOutputState_str, asynParamInt32, &indexOutputState, "OUTP:STAT", "", 0, 0, NULL, scpiReadWrite, NULL, 0, false);
     createScpiItem(indexPressure_str, asynParamFloat64, &indexPressure, "SENS:PRES", "", 0, 0, NULL, scpiReadOnly, NULL, 1, false);
     createScpiItem(indexBarometric_str, asynParamFloat64, &indexBarometric, "SENS:BAR", "", 0, 0, NULL, scpiReadOnly, NULL, 5, false);
-    createScpiItem(indexGasUsed_str, asynParamInt32, &indexGasUsed, "SENS:CORR:HEAD", "", 0, 0, GasUsedEnum, scpiReadWrite, NULL, 5, false);
+    createScpiItem(indexGasUsed_str, asynParamInt32, &indexGasUsed, "SENS:CORR:HEAD", "", 0, 0, GasUsedEnum, scpiReadWrite, NULL, 0, false);
     createScpiParam(indexGasUsed, indexHeight_str, asynParamFloat64, &indexHeight, NULL, false);
-    createScpiItem(indexHeadCorrState_str, asynParamInt32, &indexHeadCorrState, "SENS:CORR:HEAD:STAT", "", 0, 0, NULL, scpiReadWrite, NULL, 5, false);
-    createScpiItem(indexFilterFrequency_str, asynParamFloat64, &indexFilterFrequency, "SENS:FILT:FREQ", "", 0, 0, NULL, scpiReadWrite, NULL, 5, false);
-    createScpiItem(indexFilterState_str, asynParamInt32, &indexFilterState, "SENS:FILT:STAT", "", 0, 0, NULL, scpiReadWrite, NULL, 5, false);
-    createScpiItem(indexFillTime_str, asynParamInt32, &indexFillTime, "SENS:FILL:TIME", "", 0, 0, NULL, scpiReadWrite, NULL, 5, false);
-    createScpiItem(indexFillTimeState_str, asynParamInt32, &indexFillTimeState, "SENS:FILL:TIME:STAT", "", 0, 0, NULL, scpiReadWrite, NULL, 5, false);
-    createScpiItem(indexSenseRange_str, asynParamOctet, &indexSenseRange, "SENS:RANG", "", 0, 0, NULL, scpiReadWrite, NULL, 5, false);
+    createScpiItem(indexHeadCorrState_str, asynParamInt32, &indexHeadCorrState, "SENS:CORR:HEAD:STAT", "", 0, 0, NULL, scpiReadWrite, NULL, 0, false);
+    createScpiItem(indexFilterFrequency_str, asynParamFloat64, &indexFilterFrequency, "SENS:FILT:FREQ", "", 0, 0, NULL, scpiReadWrite, NULL, 0, false);
+    createScpiItem(indexFilterState_str, asynParamInt32, &indexFilterState, "SENS:FILT:STAT", "", 0, 0, NULL, scpiReadWrite, NULL, 0, false);
+    createScpiItem(indexFillTime_str, asynParamInt32, &indexFillTime, "SENS:FILL:TIME", "", 0, 0, NULL, scpiReadWrite, NULL, 0, false);
+    createScpiItem(indexFillTimeState_str, asynParamInt32, &indexFillTimeState, "SENS:FILL:TIME:STAT", "", 0, 0, NULL, scpiReadWrite, NULL, 0, false);
+    createScpiItem(indexSenseRange_str, asynParamOctet, &indexSenseRange, "SENS:RANG", "", 0, 0, NULL, scpiReadWrite, NULL, 0, false);
     createScpiItem(indexSetPointEffort_str, asynParamInt32, &indexSetPointEffort, "SOUR:EFF", "", 0, 0, NULL, scpiReadOnly, NULL, 5, false);
-    createScpiItem(indexInLimits_str, asynParamFloat64, &indexInLimits, "SOUR:INL", "", 0, 0, NULL, scpiReadWrite, NULL, 5, false);
-    createScpiItem(indexInLimitsTime_str, asynParamFloat64, &indexInLimitsTime, "SOUR:INL:TIME", "", 0, 0, NULL, scpiReadWrite, NULL, 5, false);
-    createScpiItem(indexPressureSetPoint_str, asynParamFloat64, &indexPressureSetPoint, "SOUR", "", 0, 0, NULL, scpiReadWrite, NULL, 5, false);
+    createScpiItem(indexInLimits_str, asynParamFloat64, &indexInLimits, "SOUR:INL", "", 0, 0, NULL, scpiReadWrite, NULL, 0, false);
+    createScpiItem(indexInLimitsTime_str, asynParamFloat64, &indexInLimitsTime, "SOUR:INL:TIME", "", 0, 0, NULL, scpiReadWrite, NULL, 0, false);
+    createScpiItem(indexPressureSetPoint_str, asynParamFloat64, &indexPressureSetPoint, "SOUR", "", 0, 0, NULL, scpiReadWrite, NULL, 0, false);
     createScpiItem(indexPerformVent_str, asynParamInt32, &indexPerformVent, "SOUR:VENT", "", 0, 0, NULL, scpiCommand, NULL, 5, false);
     createScpiItem(indexAbortVent_str, asynParamInt32, &indexAbortVent, "SOUR:VENT", "", 0, 0, NULL, scpiCommand, NULL, 5, false);
     createScpiItem(indexVentState_str, asynParamInt32, &indexVentState, "SOUR:VENT", "", 0, 0, NULL, scpiReadOnly, NULL, 5, false);
-    createScpiItem(indexVentTime_str, asynParamInt32, &indexVentTime, "SOUR:VENT:TIME", "", 0, 0, NULL, scpiReadWrite, NULL, 5, false);
-    createScpiItem(indexSourceRange_str, asynParamOctet, &indexSourceRange, "SOUR:RANG", "", 0, 0, NULL, scpiReadWrite, NULL, 5, false);
-    createScpiItem(indexAutoSourceRange_str, asynParamInt32, &indexAutoSourceRange, "SOUR:RANG:AUTO", "", 0, 0, NULL, scpiReadWrite, NULL, 5, false);
+    createScpiItem(indexVentTime_str, asynParamInt32, &indexVentTime, "SOUR:VENT:TIME", "", 0, 0, NULL, scpiReadWrite, NULL, 0, false);
+    createScpiItem(indexSourceRange_str, asynParamOctet, &indexSourceRange, "SOUR:RANG", "", 0, 0, NULL, scpiReadWrite, NULL, 0, false);
+    createScpiItem(indexAutoSourceRange_str, asynParamInt32, &indexAutoSourceRange, "SOUR:RANG:AUTO", "", 0, 0, NULL, scpiReadWrite, NULL, 0, false);
     createScpiItem(indexSourceRangeLow_str, asynParamOctet, &indexSourceRangeLow, "SOUR:RANG:LOW", "", 0, 0, NULL, scpiReadOnly, NULL, 5, false);
-    createScpiItem(indexPressureSlewRate_str, asynParamFloat64, &indexPressureSlewRate, "SOUR:SLEW", "", 0, 0, NULL, scpiReadWrite, NULL, 5, false);
-    createScpiItem(indexPressureSlewMode_str, asynParamInt32, &indexPressureSlewMode, "SOUR:SLEW:MODE", "", 0, 0, PressureSlewModeEnum, scpiReadWrite, NULL, 5, false);
-    createScpiItem(indexPressureOvershoot_str, asynParamInt32, &indexPressureOvershoot, "SOUR:SLEW:OVER", "", 0, 0, NULL, scpiReadWrite, NULL, 5, false);
-    createScpiItem(indexConditionRegister_str, asynParamInt32, &indexConditionRegister, "STAT:OPER:COND", "", 0, 0, NULL, scpiReadOnly, NULL, 5, false);
-    createScpiItem(indexEnableRegister_str, asynParamInt32, &indexEnableRegister, "STAT:OPER:ENAB", "", 0, 0, NULL, scpiReadWrite, NULL, 5, false);
+    createScpiItem(indexPressureSlewRate_str, asynParamFloat64, &indexPressureSlewRate, "SOUR:SLEW", "", 0, 0, NULL, scpiReadWrite, NULL, 0, false);
+    createScpiItem(indexPressureSlewMode_str, asynParamInt32, &indexPressureSlewMode, "SOUR:SLEW:MODE", "", 0, 0, PressureSlewModeEnum, scpiReadWrite, NULL, 0, false);
+    createScpiItem(indexPressureOvershoot_str, asynParamInt32, &indexPressureOvershoot, "SOUR:SLEW:OVER", "", 0, 0, NULL, scpiReadWrite, NULL, 0, false);
+    createScpiItem(indexEnableRegister_str, asynParamInt32, &indexEnableRegister, "STAT:OPER:ENAB", "", 0, 0, NULL, scpiReadWrite, NULL, 0, false);
     createScpiItem(indexEventRegister_str, asynParamInt32, &indexEventRegister, "STAT:OPER:EVEN", "", 0, 0, NULL, scpiReadOnly, NULL, 5, false);
     createScpiItem(indexPressureConditionRegister_str, asynParamInt32, &indexPressureConditionRegister, "STAT:OPER:PRES:COND", "", 0, 0, NULL, scpiReadOnly, NULL, 5, false);
-    createScpiItem(indexPressureEnableRegister_str, asynParamInt32, &indexPressureEnableRegister, "STAT:OPER:PRES:ENAB", "", 0, 0, NULL, scpiReadWrite, NULL, 5, false);
+    createScpiItem(indexPressureEnableRegister_str, asynParamInt32, &indexPressureEnableRegister, "STAT:OPER:PRES:ENAB", "", 0, 0, NULL, scpiReadWrite, NULL, 0, false);
     createScpiItem(indexPressureEventRegister_str, asynParamInt32, &indexPressureEventRegister, "STAT:OPER:PRES:EVEN", "", 0, 0, NULL, scpiReadOnly, NULL, 5, false);
     createScpiItem(indexSystemErrorNumber_str, asynParamInt32, &indexSystemErrorNumber, "SYST:ERR", "", 0, 0, NULL, scpiReadOnly, NULL, 5, false);
     createScpiParam(indexSystemErrorNumber, indexSystemError_str, asynParamOctet, &indexSystemError, NULL, false);
     createScpiItem(indexSystemScpiVers_str, asynParamOctet, &indexSystemScpiVers, "SYST:VERS", "", 0, 0, NULL, scpiReadOnly, NULL, 5, false);
-    createScpiItem(indexPressureUnits_str, asynParamOctet, &indexPressureUnits, "UNIT:PRES", "", 0, 0, NULL, scpiReadWrite, NULL, 5, false);
-    createScpiItem(indexUserUnit1Name_str, asynParamOctet, &indexUserUnit1Name, "UNIT:DEF1", "", 0, 0, NULL, scpiReadWrite, NULL, 5, false);
+    createScpiItem(indexPressureUnits_str, asynParamOctet, &indexPressureUnits, "UNIT:PRES", "", 0, 0, NULL, scpiReadWrite, NULL, 0, false);
+    createScpiItem(indexUserUnit1Name_str, asynParamOctet, &indexUserUnit1Name, "UNIT:DEF1", "", 0, 0, NULL, scpiReadWrite, NULL, 0, false);
     createScpiParam(indexUserUnit1Name, indexUserUnit1Factor_str, asynParamFloat64, &indexUserUnit1Factor, NULL, false);
-    createScpiItem(indexUserUnit2Name_str, asynParamOctet, &indexUserUnit2Name, "UNIT:DEF2", "", 0, 0, NULL, scpiReadWrite, NULL, 5, false);
+    createScpiItem(indexUserUnit2Name_str, asynParamOctet, &indexUserUnit2Name, "UNIT:DEF2", "", 0, 0, NULL, scpiReadWrite, NULL, 0, false);
     createScpiParam(indexUserUnit2Name, indexUserUnit2Factor_str, asynParamFloat64, &indexUserUnit2Factor, NULL, false);
     createScpiItem(indexClearStatus_str, asynParamInt32, &indexClearStatus, "*CLS", "", 0, 0, NULL, scpiCommand, NULL, 5, true);
-    createScpiItem(indexStdEventEnable_str, asynParamInt32, &indexStdEventEnable, "*ESE", "", 0, 0, NULL, scpiReadWrite, NULL, 5, false);
+    createScpiItem(indexStdEventEnable_str, asynParamInt32, &indexStdEventEnable, "*ESE", "", 0, 0, NULL, scpiReadWrite, NULL, 0, false);
     createScpiItem(indexStdEventStatus_str, asynParamInt32, &indexStdEventStatus, "*ESR", "", 0, 0, NULL, scpiReadOnly, NULL, 5, false);
     createScpiItem(indexAllowLocal_str, asynParamInt32, &indexAllowLocal, ":GTL", "", 0, 0, NULL, scpiCommand, NULL, 5, true);
     createScpiItem(indexLocalLockOut_str, asynParamInt32, &indexLocalLockOut, ":LLO", "", 0, 0, NULL, scpiCommand, NULL, 5, true);
     createScpiItem(indexLocalOnly_str, asynParamInt32, &indexLocalOnly, ":LOC", "", 0, 0, NULL, scpiCommand, NULL, 5, true);
     createScpiItem(indexRemoteOnly_str, asynParamInt32, &indexRemoteOnly, ":REM", "", 0, 0, NULL, scpiCommand, NULL, 5, true);
     createScpiItem(indexResetInstrument_str, asynParamInt32, &indexResetInstrument, "*RST", "", 0, 0, NULL, scpiCommand, NULL, 5, true);
-    createScpiItem(indexServiceReqEnable_str, asynParamInt32, &indexServiceReqEnable, "*SRE", "", 0, 0, NULL, scpiReadWrite, NULL, 5, false);
+    createScpiItem(indexServiceReqEnable_str, asynParamInt32, &indexServiceReqEnable, "*SRE", "", 0, 0, NULL, scpiReadWrite, NULL, 0, false);
     createScpiItem(indexStdStatusRegister_str, asynParamInt32, &indexStdStatusRegister, "*STB", "", 0, 0, NULL, scpiReadOnly, NULL, 5, false);
     //*!*Section createParameter end*!*
     //*!*Section initParameter begin*!*
@@ -198,7 +196,6 @@ DruckDPI515::DruckDPI515(const char* portName, const char* devicePortName,
     setDoubleParam(indexPressureSlewRate, 0.0);
     setIntegerParam(indexPressureSlewMode, 0);
     setIntegerParam(indexPressureOvershoot, 0);
-    setIntegerParam(indexConditionRegister, 0);
     setIntegerParam(indexEnableRegister, 0);
     setIntegerParam(indexEventRegister, 0);
     setIntegerParam(indexPressureConditionRegister, 0);

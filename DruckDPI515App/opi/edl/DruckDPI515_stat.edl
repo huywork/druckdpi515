@@ -34,45 +34,6 @@ w 95
 x 100
 y 5
 bgColor index 10
-controlPv "$(P):CONDITIONREGISTER_RBV"
-fgColor index 15
-font "arial-bold-r-12.0"
-fontAlign "center"
-limitsFromDb
-nullColor index 0
-showUnits
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-h 20
-major 4
-minor 1
-release 0
-w 95
-x 0
-y 5
-bgColor index 3
-fgColor index 14
-font "arial-bold-r-12.0"
-fontAlign "left"
-value {
-  "  ConditionRegister  "
-}
-endObjectProperties
-
-# (Text Monitor)
-object activeXTextDspClass:noedit
-beginObjectProperties
-h 20
-major 4
-minor 4
-release 0
-w 95
-x 100
-y 30
-bgColor index 10
 controlPv "$(P):ENABLEREGISTER_RBV"
 fgColor index 15
 font "arial-bold-r-12.0"
@@ -91,7 +52,7 @@ minor 0
 release 0
 w 95
 x 200
-y 30
+y 5
 bgColor index 3
 controlPv "$(P):ENABLEREGISTER"
 fgColor index 25
@@ -108,7 +69,7 @@ minor 1
 release 0
 w 95
 x 0
-y 30
+y 5
 bgColor index 3
 fgColor index 14
 font "arial-bold-r-12.0"
@@ -127,7 +88,7 @@ minor 4
 release 0
 w 95
 x 100
-y 55
+y 30
 bgColor index 10
 controlPv "$(P):EVENTREGISTER_RBV"
 fgColor index 15
@@ -147,7 +108,7 @@ minor 1
 release 0
 w 95
 x 0
-y 55
+y 30
 bgColor index 3
 fgColor index 14
 font "arial-bold-r-12.0"
@@ -166,7 +127,7 @@ minor 4
 release 0
 w 95
 x 100
-y 80
+y 55
 bgColor index 10
 controlPv "$(P):PRESSURECONDITIONREGISTER_RBV"
 fgColor index 15
@@ -186,7 +147,7 @@ minor 1
 release 0
 w 95
 x 0
-y 80
+y 55
 bgColor index 3
 fgColor index 14
 font "arial-bold-r-12.0"
@@ -205,7 +166,7 @@ minor 4
 release 0
 w 95
 x 100
-y 105
+y 80
 bgColor index 10
 controlPv "$(P):PRESSUREENABLEREGISTER_RBV"
 fgColor index 15
@@ -225,7 +186,7 @@ minor 0
 release 0
 w 95
 x 200
-y 105
+y 80
 bgColor index 3
 controlPv "$(P):PRESSUREENABLEREGISTER"
 fgColor index 25
@@ -242,7 +203,7 @@ minor 1
 release 0
 w 95
 x 0
-y 105
+y 80
 bgColor index 3
 fgColor index 14
 font "arial-bold-r-12.0"
@@ -261,7 +222,7 @@ minor 4
 release 0
 w 95
 x 100
-y 130
+y 105
 bgColor index 10
 controlPv "$(P):PRESSUREEVENTREGISTER_RBV"
 fgColor index 15
@@ -281,7 +242,7 @@ minor 1
 release 0
 w 95
 x 0
-y 130
+y 105
 bgColor index 3
 fgColor index 14
 font "arial-bold-r-12.0"
@@ -300,7 +261,7 @@ minor 0
 release 0
 w 95
 x 100
-y 155
+y 130
 3d
 botShadowColor index 11
 controlPv "$(P):CLEARSTATUS"
@@ -323,7 +284,7 @@ minor 4
 release 0
 w 95
 x 100
-y 180
+y 155
 bgColor index 10
 controlPv "$(P):STDEVENTENABLE_RBV"
 fgColor index 15
@@ -343,7 +304,7 @@ minor 0
 release 0
 w 95
 x 200
-y 180
+y 155
 bgColor index 3
 controlPv "$(P):STDEVENTENABLE"
 fgColor index 25
@@ -360,7 +321,7 @@ minor 1
 release 0
 w 95
 x 0
-y 180
+y 155
 bgColor index 3
 fgColor index 14
 font "arial-bold-r-12.0"
@@ -379,7 +340,7 @@ minor 4
 release 0
 w 95
 x 100
-y 205
+y 180
 bgColor index 10
 controlPv "$(P):STDEVENTSTATUS_RBV"
 fgColor index 15
@@ -399,7 +360,7 @@ minor 1
 release 0
 w 95
 x 0
-y 205
+y 180
 bgColor index 3
 fgColor index 14
 font "arial-bold-r-12.0"
@@ -418,7 +379,7 @@ minor 4
 release 0
 w 95
 x 100
-y 230
+y 205
 bgColor index 10
 controlPv "$(P):SERVICEREQENABLE_RBV"
 fgColor index 15
@@ -438,7 +399,7 @@ minor 0
 release 0
 w 95
 x 200
-y 230
+y 205
 bgColor index 3
 controlPv "$(P):SERVICEREQENABLE"
 fgColor index 25
@@ -455,7 +416,7 @@ minor 1
 release 0
 w 95
 x 0
-y 230
+y 205
 bgColor index 3
 fgColor index 14
 font "arial-bold-r-12.0"
@@ -474,7 +435,7 @@ minor 4
 release 0
 w 95
 x 100
-y 255
+y 230
 bgColor index 10
 controlPv "$(P):STDSTATUSREGISTER_RBV"
 fgColor index 15
@@ -494,7 +455,7 @@ minor 1
 release 0
 w 95
 x 0
-y 255
+y 230
 bgColor index 3
 fgColor index 14
 font "arial-bold-r-12.0"
