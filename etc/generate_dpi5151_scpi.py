@@ -11,11 +11,11 @@ if __name__ == "__main__":
         [Param('AbortZero', group='cal', defaultValue='0')] ))
     scpi.add(Item('CAL:ZERO:AUTO', accessMode=Item.readOnly, params=
         [Param('AutoZeroState', group='cal', enum=['ok', 'in progress', 'timed out', 'offset o/s lims', 'aborted'], numericEnum=True)] ))
-    scpi.add(Item('CAL:ZERO:AUTO:VAL', params=
-        [Param('AutoZeroVal', dataType=Param.floatType, group='cal')] ))
+    scpi.add(Item('CAL:ZERO:AUTO:VAL', pollPeriod=0, params=
+        [Param('AutoZeroVal', dataType=Param.floatType, group='cal', prec='4')] ))
     scpi.add(Item('CAL:ZERO:TIME', accessMode=Item.readOnly, params=
         [Param('TimedZero', dataType=Param.integerType, group='cal')] ))
-    scpi.add(Item('CAL:ZERO:TIME:STAT', params=
+    scpi.add(Item('CAL:ZERO:TIME:STAT', pollPeriod=0, params=
         [Param('TimedZeroState', group='cal', enum=['off', 'on'], numericEnum=True)] ))
     scpi.add(Item('INP:LOG', accessMode=Item.readOnly, params=
         [Param('DigitalIn', group='outp', enum=['off', 'on'], numericEnum=True)] ))
@@ -23,84 +23,84 @@ if __name__ == "__main__":
         [Param('InstrCatalogue', dataType=Param.longStringType, group='instr')] ))
     scpi.add(Item('INST:LIM1', accessMode=Item.readOnly, params=
         [Param('RangeName', dataType=Param.stringType, group='instr'),
-        Param('MaxRange', dataType=Param.floatType, group='instr'),
-        Param('MinRange', dataType=Param.floatType, group='instr')] ))
+        Param('MaxRange', dataType=Param.floatType, group='instr', prec='4'),
+        Param('MinRange', dataType=Param.floatType, group='instr', prec='4')] ))
     scpi.add(Item('INST:SN', accessMode=Item.readOnly, params=
         [Param('InstrNumber', dataType=Param.integerType, group='instr')] ))
     scpi.add(Item('INST:UNIT1', accessMode=Item.readOnly, params=
         [Param('Units', dataType=Param.stringType, group='instr')] ))
     scpi.add(Item('INST:VERS', accessMode=Item.readOnly, params=
         [Param('InstrVersion', dataType=Param.integerType, group='instr')] ))
-    scpi.add(Item('OUTP:ISOL', params=
+    scpi.add(Item('OUTP:ISOL', pollPeriod=0, params=
         [Param('IsolationValve', group='outp', enum=['off', 'on'], numericEnum=True)] ))
-    scpi.add(Item('OUTP:LOG1:LEV', params=
+    scpi.add(Item('OUTP:LOG1:LEV', pollPeriod=0, params=
         [Param('DigitalOut1', group='outp', enum=['low', 'high'], numericEnum=True)] ))
-    scpi.add(Item('OUTP:LOG2:LEV', params=
+    scpi.add(Item('OUTP:LOG2:LEV', pollPeriod=0, params=
         [Param('DigitalOut2', group='outp', enum=['low', 'high'], numericEnum=True)] ))
-    scpi.add(Item('OUTP:STAT', params=
+    scpi.add(Item('OUTP:STAT', pollPeriod=0, params=
         [Param('OutputState', group='outp', enum=['off', 'on'], numericEnum=True)] ))
     scpi.add(Item('SENS:PRES', accessMode=Item.readOnly, pollPeriod=1, params=
-        [Param('Pressure', dataType=Param.floatType, group='sense')] ))
+        [Param('Pressure', dataType=Param.floatType, group='sense', prec='4')] ))
     scpi.add(Item('SENS:BAR', accessMode=Item.readOnly, params=
-        [Param('Barometric', dataType=Param.floatType, group='sense')] ))
-    scpi.add(Item('SENS:CORR:HEAD', params=
+        [Param('Barometric', dataType=Param.floatType, group='sense', prec='4')] ))
+    scpi.add(Item('SENS:CORR:HEAD', pollPeriod=0, params=
         [Param('GasUsed', group='sense', enum=['air', 'nitr']),
-        Param('Height', dataType=Param.floatType, group='sense')] ))
-    scpi.add(Item('SENS:CORR:HEAD:STAT', params=
+        Param('Height', dataType=Param.floatType, group='sense', prec='4')] ))
+    scpi.add(Item('SENS:CORR:HEAD:STAT', pollPeriod=0, params=
         [Param('HeadCorrState', group='sense', enum=['off', 'on'], numericEnum=True)] ))
     #scpi.add(Item('SENS:CORR:HEAD:OFF', params=
-    #    [Param('OffsetCorr', dataType=Param.floatType, group='sense')] ))
+    #    [Param('OffsetCorr', dataType=Param.floatType, group='sense', prec='4')] ))
     #scpi.add(Item('SENS:CORR:HEAD:OFF:STAT', params=
     #    [Param('OffsetCorrState', group='sense', enum=['off', 'on'])] ))
     #scpi.add(Item('SENS:FILT:STEP', params=
-    #    [Param('FilterStep', dataType=Param.floatType, group='sense')] ))
-    scpi.add(Item('SENS:FILT:FREQ', params=
-        [Param('FilterFrequency', dataType=Param.floatType, group='sense')] ))
-    scpi.add(Item('SENS:FILT:STAT', params=
+    #    [Param('FilterStep', dataType=Param.floatType, group='sense', prec='4')] ))
+    scpi.add(Item('SENS:FILT:FREQ', pollPeriod=0, params=
+        [Param('FilterFrequency', dataType=Param.floatType, group='sense', prec='4')] ))
+    scpi.add(Item('SENS:FILT:STAT', pollPeriod=0, params=
         [Param('FilterState', group='sense', enum=['off', 'on'], numericEnum=True)] ))
-    scpi.add(Item('SENS:FILL:TIME', params=
+    scpi.add(Item('SENS:FILL:TIME', pollPeriod=0, params=
         [Param('FillTime', dataType=Param.integerType, group='sense', defaultValue=30)] ))
-    scpi.add(Item('SENS:FILL:TIME:STAT', params=
+    scpi.add(Item('SENS:FILL:TIME:STAT', pollPeriod=0, params=
         [Param('FillTimeState', group='sense', enum=['off', 'on'], numericEnum=True)] ))
-    scpi.add(Item('SENS:RANG', params=
+    scpi.add(Item('SENS:RANG', pollPeriod=0, params=
         [Param('SenseRange', dataType=Param.stringType, group='sense', defaultValue='210.00barg')] ))
     scpi.add(Item('SOUR:EFF', accessMode=Item.readOnly, params=
         [Param('SetPointEffort', group='source')] ))
-    scpi.add(Item('SOUR:INL', params=
-        [Param('InLimits', dataType=Param.floatType, group='source')] ))
-    scpi.add(Item('SOUR:INL:TIME', params=
-        [Param('InLimitsTime', dataType=Param.floatType, group='source')] ))
-    scpi.add(Item('SOUR', params=
-        [Param('PressureSetPoint', dataType=Param.floatType, group='source')] ))
+    scpi.add(Item('SOUR:INL', pollPeriod=0, params=
+        [Param('InLimits', dataType=Param.floatType, group='source', prec='4')] ))
+    scpi.add(Item('SOUR:INL:TIME', pollPeriod=0, params=
+        [Param('InLimitsTime', dataType=Param.floatType, group='source', prec='4')] ))
+    scpi.add(Item('SOUR', pollPeriod=0, params=
+        [Param('PressureSetPoint', dataType=Param.floatType, group='source', prec='4')] ))
     scpi.add(Item('SOUR:VENT', accessMode=Item.command, params=
         [Param('PerformVent', group='source', defaultValue='1')] ))
     scpi.add(Item('SOUR:VENT', accessMode=Item.command, params=
         [Param('AbortVent', group='source', defaultValue='0')] ))
     scpi.add(Item('SOUR:VENT', accessMode=Item.readOnly, params=
         [Param('VentState', group='source', enum=['ok', 'in progress', 'timed out', 'o/s lims', 'aborted'], numericEnum=True)] ))
-    scpi.add(Item('SOUR:VENT:TIME', params=
+    scpi.add(Item('SOUR:VENT:TIME', pollPeriod=0, params=
         [Param('VentTime', group='source')] ))
-    scpi.add(Item('SOUR:RANG', params=
+    scpi.add(Item('SOUR:RANG', pollPeriod=0, params=
         [Param('SourceRange', dataType=Param.stringType, group='source', defaultValue='210.00barg')] ))
-    scpi.add(Item('SOUR:RANG:AUTO', params=
+    scpi.add(Item('SOUR:RANG:AUTO', pollPeriod=0, params=
         [Param('AutoSourceRange', group='source', enum=['off', 'on'], numericEnum=True)] ))
     scpi.add(Item('SOUR:RANG:LOW', accessMode=Item.readOnly, params=
         [Param('SourceRangeLow', dataType=Param.stringType, group='source')] ))
-    scpi.add(Item('SOUR:SLEW', params=
-        [Param('PressureSlewRate', dataType=Param.floatType, group='source')] ))
-    scpi.add(Item('SOUR:SLEW:MODE', params=
+    scpi.add(Item('SOUR:SLEW', pollPeriod=0, params=
+        [Param('PressureSlewRate', dataType=Param.floatType, group='source', prec='4')] ))
+    scpi.add(Item('SOUR:SLEW:MODE', pollPeriod=0, params=
         [Param('PressureSlewMode', group='source', enum=['max', 'val'])] ))
-    scpi.add(Item('SOUR:SLEW:OVER', params=
+    scpi.add(Item('SOUR:SLEW:OVER', pollPeriod=0, params=
         [Param('PressureOvershoot', group='source', enum=['not allowed', 'allowed'], numericEnum=True)] ))
-    scpi.add(Item('STAT:OPER:COND', accessMode=Item.readOnly, params=
-        [Param('ConditionRegister', group='stat')] ))
-    scpi.add(Item('STAT:OPER:ENAB', params=
+    #scpi.add(Item('STAT:OPER:COND', accessMode=Item.readOnly, params=
+    #    [Param('ConditionRegister', group='stat')] ))
+    scpi.add(Item('STAT:OPER:ENAB', pollPeriod=0, params=
         [Param('EnableRegister', group='stat')] ))
     scpi.add(Item('STAT:OPER:EVEN', accessMode=Item.readOnly, params=
         [Param('EventRegister', group='stat')] ))
     scpi.add(Item('STAT:OPER:PRES:COND', accessMode=Item.readOnly, params=
         [Param('PressureConditionRegister', group='stat')] ))
-    scpi.add(Item('STAT:OPER:PRES:ENAB', params=
+    scpi.add(Item('STAT:OPER:PRES:ENAB', pollPeriod=0, params=
         [Param('PressureEnableRegister', group='stat')] ))
     scpi.add(Item('STAT:OPER:PRES:EVEN', accessMode=Item.readOnly, params=
         [Param('PressureEventRegister', group='stat')] ))
@@ -109,17 +109,17 @@ if __name__ == "__main__":
         Param('SystemError', dataType=Param.stringType, group='sys')] ))
     scpi.add(Item('SYST:VERS', accessMode=Item.readOnly, params=
         [Param('SystemScpiVers', dataType=Param.stringType, group='sys')] ))
-    scpi.add(Item('UNIT:PRES', params=
+    scpi.add(Item('UNIT:PRES', pollPeriod=0, params=
         [Param('PressureUnits', dataType=Param.stringType, group='unit', defaultValue='BAR')] ))
-    scpi.add(Item('UNIT:DEF1', params=
+    scpi.add(Item('UNIT:DEF1', pollPeriod=0, params=
         [Param('UserUnit1Name', dataType=Param.stringType, group='unit'),
-        Param('UserUnit1Factor', dataType=Param.floatType, group='unit')] ))
-    scpi.add(Item('UNIT:DEF2', params=
+        Param('UserUnit1Factor', dataType=Param.floatType, group='unit', prec='4')] ))
+    scpi.add(Item('UNIT:DEF2', pollPeriod=0, params=
         [Param('UserUnit2Name', dataType=Param.stringType, group='unit'),
-        Param('UserUnit2Factor', dataType=Param.floatType, group='unit')] ))
+        Param('UserUnit2Factor', dataType=Param.floatType, group='unit', prec='4')] ))
     scpi.add(Item('*CLS', accessMode=Item.command, params=
         [Param('ClearStatus', group='stat', iocOnly=True)] ))
-    scpi.add(Item('*ESE', params=
+    scpi.add(Item('*ESE', pollPeriod=0, params=
         [Param('StdEventEnable', group='stat')] ))
     scpi.add(Item('*ESR', accessMode=Item.readOnly, params=
         [Param('StdEventStatus', group='stat')] ))
@@ -133,7 +133,7 @@ if __name__ == "__main__":
         [Param('RemoteOnly', group='sys', iocOnly=True)] ))
     scpi.add(Item('*RST', accessMode=Item.command, params=
         [Param('ResetInstrument', group='sys', iocOnly=True)] ))
-    scpi.add(Item('*SRE', params=
+    scpi.add(Item('*SRE', pollPeriod=0, params=
         [Param('ServiceReqEnable', group='stat')] ))
     scpi.add(Item('*STB', accessMode=Item.readOnly, params=
         [Param('StdStatusRegister', group='stat')] ))
