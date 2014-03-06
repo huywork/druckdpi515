@@ -244,8 +244,9 @@ extern "C" int DruckDPI515Config(const char *portName, const char* devicePortNam
 static const iocshArg DruckDPI515ConfigArg0 = {"Port name", iocshArgString};
 static const iocshArg DruckDPI515ConfigArg1 = {"Device port name", iocshArgString};
 static const iocshArg DruckDPI515ConfigArg2 = {"Device port address", iocshArgInt};
+//static const iocshArg DruckDPI515ConfigArg3 = {"Number of channels", iocshArgInt};
 static const iocshArg* const DruckDPI515ConfigArgs[] =
-    {&DruckDPI515ConfigArg0, &DruckDPI515ConfigArg1, &DruckDPI515ConfigArg2};
+    {&DruckDPI515ConfigArg0, &DruckDPI515ConfigArg1, &DruckDPI515ConfigArg2/*, &DruckDPI515ConfigArg3*/};
 static const iocshFuncDef configDruckDPI515 = {"DruckDPI515Config", 3, DruckDPI515ConfigArgs};
 static void configDruckDPI515CallFunc(const iocshArgBuf *args)
 {

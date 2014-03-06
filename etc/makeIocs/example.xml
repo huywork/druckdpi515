@@ -1,8 +1,6 @@
 <?xml version="1.0" ?>
-<components arch="linux-x86">
-	<asyn.AsynSerial baud="9600" bits="8" crtscts="0" input_eos="\n" name="druckser" noAutoConnect="False" noProcessEos="False" output_eos="\n" parity="none" port="/dev/ttyS0" priority="100" simulation="localhost:9001" stop="1"/>
-	<scpi.Scpi P="DRUCK" PORT="druck" name="scpi"/>
-	<scpi.ScpiDevice PORT="druck" SERIALPORT="druck_ser" name="scpidev"/>
-	<DruckDPI515.DruckDPI515 P="DRUCK" PORT="druck" name="druck"/>
-	<DruckDPI515.DruckDPI515Device PORT="druck" SERIALPORT="druckser" SERIALPORTADDR="0" name="druckdev"/>
+<components arch="linux-x86_64">
+	<asyn.AsynSerial baud="9600" bits="8" crtscts="0" input_eos="\n" name="cereal" output_eos="\n" parity="None" port="/dev/ttyS0" stop="1"/>
+	<scpi.ScpiDevice P="example" PORT="cereal" name="skippy"/>
+	<DruckDPI515.DruckDPI515 P="example" PORT="cereal" name="box"/>
 </components>

@@ -1,3 +1,6 @@
 SUPPORT= /dls_sw/prod/R3.14.12.3/support
 WORK= /dls_sw/work/R3.14.12.3/support
 
+DRUCKDPI515=       $(WORK)/DruckDPI515
+ASYN=              $(SUPPORT)/asyn/4-21
+

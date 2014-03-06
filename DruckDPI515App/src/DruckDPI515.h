@@ -13,7 +13,7 @@
 class DruckDPI515 : public scpiPortDriver
 {
 public:
-	DruckDPI515(const char *portName, const char* devicePortName, int devicePortAddress);
+	DruckDPI515(const char *portName, const char* devicePortName, int devicePortAddress/*, int channels = 2*/);
     virtual ~DruckDPI515();
 
 protected:
