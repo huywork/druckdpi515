@@ -10,10 +10,10 @@
 
 #include "scpiPortDriver.h"
 
-class DruckDPI515 : public scpiPortDriver
+class DruckDPI515 //: scpiPortDriver
 {
 public:
-	DruckDPI515(const char *portName, const char* devicePortName, int devicePortAddress/*, int channels = 2*/);
+	DruckDPI515(const char *portName, const char* devicePortName, int devicePortAddress, int channels = 2);
     virtual ~DruckDPI515();
 
 protected:
@@ -87,6 +87,9 @@ protected:
     int indexStdStatusRegister;
     //*!*Section indexDeclaration end*!*
     int LAST_PARAM;
+private:
+    int channels;
+    scpiPortDriver* skippy;
 };
 
 
