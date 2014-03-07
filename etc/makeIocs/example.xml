@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <components arch="linux-x86_64">
-	<asyn.AsynSerial baud="9600" bits="8" crtscts="0" input_eos="\n" name="cereal" output_eos="\n" parity="None" port="/dev/ttyS0" stop="1"/>
+	<asyn.AsynSerial baud="9600" bits="8" crtscts="0" input_eos="\r" name="cereal" output_eos="\r" parity="None" port="/dev/ttyS0" stop="1"/>
 	<scpi.ScpiDevice P="example" PORT="cereal" name="skippy"/>
 	<DruckDPI515.DruckDPI515 P="example" PORT="cereal" name="box"/>
 </components>
