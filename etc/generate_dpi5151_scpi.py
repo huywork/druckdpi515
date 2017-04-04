@@ -138,10 +138,10 @@ if __name__ == "__main__":
     scpi.add(Item('*STB', accessMode=Item.readOnly, params=
         [Param('StdStatusRegister', group='stat')] ))
     # Generate the files
-    scpi.genIncludeFile('DruckDPI515App/src/DruckDPI515.h')
-    scpi.genSourceFile('DruckDPI515App/src/DruckDPI515.cpp')
-    scpi.genTemplateFile('DruckDPI515App/Db/DruckDPI515.template')
-    scpi.genSimulation('etc/simulations/DruckDPI515_sim.py')
+#    scpi.genIncludeFile('DruckDPI515App/src/DruckDPI515.h')
+#    scpi.genSourceFile('DruckDPI515App/src/DruckDPI515.cpp')
+#    scpi.genTemplateFile('DruckDPI515App/Db/DruckDPI515.template')
+#    scpi.genSimulation('etc/simulations/DruckDPI515_sim.py')
     # Generate the EDM panels
     scpi.genEdmPanel('DruckDPI515App/opi/edl/DruckDPI515_outp.edl', 'outp')
     scpi.genEdmPanel('DruckDPI515App/opi/edl/DruckDPI515_instr.edl', 'instr')

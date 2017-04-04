@@ -4,14 +4,15 @@ from iocbuilder import Device
 from iocbuilder.arginfo import *
 from iocbuilder.modules.asyn import Asyn
 from iocbuilder.modules.scpi import ScpiDevice
+from iocbuilder.modules.scpi import Scpi
 
-class DruckDPI515Template(AutoSubstitution):
+class _DruckDPI515Template(AutoSubstitution):
     '''Controls a Druck DPI515 pressure controller.'''
 
     # The template file
     TemplateFile = 'DruckDPI515.template'
 
-class DruckDPI515(DruckDPI515Template, Device):
+class DruckDPI515(Device):
     '''Controls a Druck DPI515 pressure controller.'''
 
     # Dependencies
@@ -21,19 +22,20 @@ class DruckDPI515(DruckDPI515Template, Device):
     DbdFileList = ['DruckDPI515']
 
     # Constructor, just store parameters
-    def __init__(self, name, PORTADDR=0, **args):
-        self.__super.__init__(**args)
-        # put the args from the autosubstitution into the self.* dictionary
-        self.__dict__.update(self.args)
-        self.name = name
-        self.PORTADDR = PORTADDR
+    def __init__(self, PORT, SERPORT, SERPORTADDR, **args):
+        self.__super.__init__()
+        self.PORT = PORT
+        self.SERPORT = SERPORT
+        self.SERPORTADDR = SERPORTADDR
+        _DruckDPI515Template(PORT=PORT, **args)
 
     # Once per instantiation
     def Initialise(self):
-        print 'DruckDPI515Config(\"%(name)s\", \"%(PORT)s\", %(PORTADDR)d)' % self.__dict__
+        print 'DruckDPI515Config(\"%(PORT)s\", \"%(SERPORT)s\", %(SERPORTADDR)d)' % self.__dict__
 
     # Arguments
-    ArgInfo = DruckDPI515Template.ArgInfo + makeArgInfo(__init__,
-        name = Simple("Device name", str),
-        PORTADDR = Simple("Asyn port address", int))
+    ArgInfo = _DruckDPI515Template.ArgInfo + makeArgInfo(__init__,
+        PORT = Simple("This device asyn port name", str),
+        SERPORT = Simple("The asyn serial port name", str),
+        SERPORTADDR = Simple("The asyn serial port address", int))
 
