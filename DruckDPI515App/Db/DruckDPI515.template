@@ -5,7 +5,7 @@
 # % macro,  P,       EPICS name prefix
 # % macro,  PORT,    Asyn port
 
-# % gui, $(name=), edm, DruckDPI515.edl, DEVICE=$(P)
+# % gui, $(name=), edm, DruckDPI515.edl, DEVICE=$(P) P=$(P)
 
 #*!*Section template begin*!*
 record(longout, "$(P):PERFORMZERO")
